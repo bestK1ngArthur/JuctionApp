@@ -5,32 +5,78 @@
 //  Created by Artem Belkov on 07.11.2020.
 //
 
-import Foundation
+import UIKit
 
 class Server {
-    
+    typealias RoomCompletion = (Room) -> Void
+    typealias RoomStatusCompletion = (RoomStatus) -> Void
+    typealias PlacesCompletion = ([Place]) -> Void
+
     static let current = Server()
     
-    typealias RoomCompletion = (Int) -> Void
-    
-    func createRoom(completion: RoomCompletion) {
-        completion(101)
+    func createRoom(for user: User, completion: RoomCompletion) {
+        completion(Room(id: 101))
     }
-    
-    typealias RoomStatusCompletion = ([Any]) -> Void
-    
+        
     func getRoomStatus(completion: RoomStatusCompletion) {
-        completion([])
+        completion(RoomStatus(voters: [], places: []))
     }
-
-    typealias PlacesCompletion = ([Any]) -> Void
     
     func getFirstPlaces(completion: PlacesCompletion) {
         completion([])
     }
         
-    func choosePlace(_ place: Int, completion: PlacesCompletion) {
+    func choosePlace(_ placeID: PlaceID, completion: PlacesCompletion) {
         completion([])
     }
 }
 
+struct User {
+    let name: String
+    let identifier: String
+    
+    init(name: String) {
+        guard let identifier = UIDevice.current.identifierForVendor?.uuidString else {
+            fatalError("Device identifier is nil")
+        }
+        
+        self.name = name
+        self.identifier = identifier
+    }
+}
+
+typealias RoomID = Int
+
+struct Room {
+    let id: RoomID
+    let link: String
+    
+    init(id: RoomID) {
+        self.id = id
+        self.link = "takto://\(id)"
+    }
+}
+
+typealias PlaceID = Int
+
+struct Voter {
+    let name: String
+    let status: Status
+    
+    enum Status {
+        case voting
+        case finished
+    }
+}
+
+struct Place {
+    let name: String
+    let photo: String
+    let cuisines: [String]
+    let isOpen: Bool
+}
+
+struct RoomStatus {
+    let voters: [Voter]
+    let places: [Place]
+}
