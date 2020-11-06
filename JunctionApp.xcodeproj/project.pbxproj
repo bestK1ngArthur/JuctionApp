@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		A5FB303D2555AD3E009E1018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB303C2555AD3E009E1018 /* AppDelegate.swift */; };
 		A5FB303F2555AD3E009E1018 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */; };
-		A5FB30412555AD3E009E1018 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30402555AD3E009E1018 /* ViewController.swift */; };
-		A5FB30442555AD3E009E1018 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FB30422555AD3E009E1018 /* Main.storyboard */; };
+		A5FB30412555AD3E009E1018 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30402555AD3E009E1018 /* RoomController.swift */; };
+		A5FB30442555AD3E009E1018 /* Room.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FB30422555AD3E009E1018 /* Room.storyboard */; };
 		A5FB30462555AD41009E1018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5FB30452555AD41009E1018 /* Assets.xcassets */; };
 		A5FB30492555AD41009E1018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FB30472555AD41009E1018 /* LaunchScreen.storyboard */; };
+		A5FB30532555E813009E1018 /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30522555E813009E1018 /* VoteController.swift */; };
+		A5FB30562555E82D009E1018 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30552555E82D009E1018 /* ResultController.swift */; };
+		A5FB305B2555E876009E1018 /* Vote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FB305A2555E876009E1018 /* Vote.storyboard */; };
+		A5FB30602555F1FC009E1018 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB305F2555F1FC009E1018 /* RoomViewModel.swift */; };
+		A5FB30632555F285009E1018 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30622555F285009E1018 /* Server.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A5FB30392555AD3E009E1018 /* JunctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JunctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FB303C2555AD3E009E1018 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A5FB30402555AD3E009E1018 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A5FB30432555AD3E009E1018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5FB30402555AD3E009E1018 /* RoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomController.swift; sourceTree = "<group>"; };
+		A5FB30432555AD3E009E1018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Room.storyboard; sourceTree = "<group>"; };
 		A5FB30452555AD41009E1018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5FB30482555AD41009E1018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5FB304A2555AD41009E1018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5FB30522555E813009E1018 /* VoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
+		A5FB30552555E82D009E1018 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
+		A5FB305A2555E876009E1018 /* Vote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vote.storyboard; sourceTree = "<group>"; };
+		A5FB305F2555F1FC009E1018 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
+		A5FB30622555F285009E1018 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,34 @@
 			children = (
 				A5FB303C2555AD3E009E1018 /* AppDelegate.swift */,
 				A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */,
-				A5FB30402555AD3E009E1018 /* ViewController.swift */,
-				A5FB30422555AD3E009E1018 /* Main.storyboard */,
+				A5FB30622555F285009E1018 /* Server.swift */,
+				A5FB30582555E869009E1018 /* Room */,
+				A5FB305D2555E87D009E1018 /* Vote */,
+				A5FB30552555E82D009E1018 /* ResultController.swift */,
 				A5FB30452555AD41009E1018 /* Assets.xcassets */,
 				A5FB30472555AD41009E1018 /* LaunchScreen.storyboard */,
 				A5FB304A2555AD41009E1018 /* Info.plist */,
 			);
 			path = JunctionApp;
+			sourceTree = "<group>";
+		};
+		A5FB30582555E869009E1018 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB305F2555F1FC009E1018 /* RoomViewModel.swift */,
+				A5FB30402555AD3E009E1018 /* RoomController.swift */,
+				A5FB30422555AD3E009E1018 /* Room.storyboard */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		A5FB305D2555E87D009E1018 /* Vote */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB30522555E813009E1018 /* VoteController.swift */,
+				A5FB305A2555E876009E1018 /* Vote.storyboard */,
+			);
+			path = Vote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +155,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FB305B2555E876009E1018 /* Vote.storyboard in Resources */,
 				A5FB30492555AD41009E1018 /* LaunchScreen.storyboard in Resources */,
 				A5FB30462555AD41009E1018 /* Assets.xcassets in Resources */,
-				A5FB30442555AD3E009E1018 /* Main.storyboard in Resources */,
+				A5FB30442555AD3E009E1018 /* Room.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5FB30412555AD3E009E1018 /* ViewController.swift in Sources */,
+				A5FB30632555F285009E1018 /* Server.swift in Sources */,
+				A5FB30412555AD3E009E1018 /* RoomController.swift in Sources */,
+				A5FB30602555F1FC009E1018 /* RoomViewModel.swift in Sources */,
+				A5FB30532555E813009E1018 /* VoteController.swift in Sources */,
+				A5FB30562555E82D009E1018 /* ResultController.swift in Sources */,
 				A5FB303D2555AD3E009E1018 /* AppDelegate.swift in Sources */,
 				A5FB303F2555AD3E009E1018 /* SceneDelegate.swift in Sources */,
 			);
@@ -146,12 +182,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A5FB30422555AD3E009E1018 /* Main.storyboard */ = {
+		A5FB30422555AD3E009E1018 /* Room.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A5FB30432555AD3E009E1018 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Room.storyboard;
 			sourceTree = "<group>";
 		};
 		A5FB30472555AD41009E1018 /* LaunchScreen.storyboard */ = {
