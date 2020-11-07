@@ -19,6 +19,7 @@ class RoomController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        checkState()
         showIntroduction()
     }
 
@@ -35,18 +36,16 @@ class RoomController: UIViewController {
     }
     
     private func stateUpdated() {
+        shareButton.isHidden = !state.isShareVisible
+        shareButton.setTitle("Invite friends", for: .normal)
+        shareButtonBottomConstraint.constant = state.isVoteVisible ? 76 : 16
         
-        switch state {
-        case .notCreated:
-            break
-        case .created:
-            break
-        case .waiting:
-            break
-        case .result:
-            break
-        }
+        voteButton.isHidden = !state.isVoteVisible
+        voteButton.isEnabled = state.isVoteEnabled
+        voteButton.backgroundColor = state.isVoteEnabled ? #colorLiteral(red: 0.5960784314, green: 0.2588235294, blue: 0.3764705882, alpha: 1) : .lightGray
+        voteButton.setTitle(state.voteTitle, for: .normal)
         
+        print(state)
     }
     
     private func showNamePopupIfNeeded() {
@@ -58,6 +57,14 @@ class RoomController: UIViewController {
         popup.modalPresentationStyle = .overFullScreen
         
         present(popup, animated: false, completion: nil)
+    }
+    
+    private func checkState() {
+        if Storage.current.roomID == nil {
+            state = .notCreated
+        } else {
+            state = .created
+        }
     }
     
     private func showIntroduction() {
@@ -74,5 +81,33 @@ extension RoomController {
         case created
         case waiting
         case result
+        
+        var isShareVisible: Bool {
+            switch self {
+            case .notCreated, .created, .waiting: return true
+            case .result: return false
+            }
+        }
+        
+        var isVoteVisible: Bool {
+            switch self {
+            case .notCreated: return false
+            case .created, .waiting, .result: return true
+            }
+        }
+        
+        var isVoteEnabled: Bool {
+            switch self {
+            case .notCreated, .created, .result: return true
+            case .waiting: return false
+            }
+        }
+        
+        var voteTitle: String {
+            switch self {
+            case .notCreated, .created: return "Start choosing"
+            case .waiting, .result: return "Show suggestions"
+            }
+        }
     }
 }

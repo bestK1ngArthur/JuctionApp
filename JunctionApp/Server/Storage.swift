@@ -22,7 +22,7 @@ class Storage {
     
     var roomID: RoomID? {
         get {
-            userDefaults.integer(forKey: roomIDKey)
+            userDefaults.value(forKey: roomIDKey) as? Int
         }
         set {
             userDefaults.set(newValue, forKey: roomIDKey)
