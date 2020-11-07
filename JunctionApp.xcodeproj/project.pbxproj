@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5B9DFDF2556BE0B00E91051 /* RoomVooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9DFDE2556BE0B00E91051 /* RoomVooterCell.swift */; };
 		845EECC52556B9D200045425 /* UILabel+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EECC42556B9D200045425 /* UILabel+Utils.swift */; };
 		84F4F0D025568570008E97FC /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4F0CF25568570008E97FC /* UIImageView+Utils.swift */; };
 		84F4F0D925568B24008E97FC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4F0D825568B24008E97FC /* CardView.swift */; };
 		84F4F0DC25568B31008E97FC /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F4F0DB25568B31008E97FC /* CardView.xib */; };
 		84F4F0E025569B8D008E97FC /* MyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4F0DE25569B8D008E97FC /* MyCollectionCell.swift */; };
 		84F4F0E125569B8D008E97FC /* MyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F4F0DF25569B8D008E97FC /* MyCollectionCell.xib */; };
+		A56FB3642556FE00007C0EC7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FB3632556FE00007C0EC7 /* Models.swift */; };
+		A5B9DFDF2556BE0B00E91051 /* RoomVooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9DFDE2556BE0B00E91051 /* RoomVooterCell.swift */; };
 		A5FB303D2555AD3E009E1018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB303C2555AD3E009E1018 /* AppDelegate.swift */; };
 		A5FB303F2555AD3E009E1018 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */; };
 		A5FB30412555AD3E009E1018 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30402555AD3E009E1018 /* RoomController.swift */; };
@@ -32,7 +33,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A5B9DFDE2556BE0B00E91051 /* RoomVooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomVooterCell.swift; sourceTree = "<group>"; };
 		41EA1A7DD5DB656D5D233F6D /* Pods-JunctionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunctionApp.release.xcconfig"; path = "Target Support Files/Pods-JunctionApp/Pods-JunctionApp.release.xcconfig"; sourceTree = "<group>"; };
 		5015DF307DE5BE4448481FAB /* Pods-JunctionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunctionApp.debug.xcconfig"; path = "Target Support Files/Pods-JunctionApp/Pods-JunctionApp.debug.xcconfig"; sourceTree = "<group>"; };
 		845EECC42556B9D200045425 /* UILabel+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utils.swift"; sourceTree = "<group>"; };
@@ -41,6 +41,8 @@
 		84F4F0DB25568B31008E97FC /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		84F4F0DE25569B8D008E97FC /* MyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionCell.swift; sourceTree = "<group>"; };
 		84F4F0DF25569B8D008E97FC /* MyCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionCell.xib; sourceTree = "<group>"; };
+		A56FB3632556FE00007C0EC7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		A5B9DFDE2556BE0B00E91051 /* RoomVooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomVooterCell.swift; sourceTree = "<group>"; };
 		A5FB30392555AD3E009E1018 /* JunctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JunctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FB303C2555AD3E009E1018 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				A5FB306F255675DD009E1018 /* App */,
-				A5FB3070255675E9009E1018 /* Server */,
+				A5FB3070255675E9009E1018 /* Services */,
 				A5FB306C255675C3009E1018 /* Screens */,
 				A5FB3078255678C9009E1018 /* Extenstions */,
 				A5FB306E255675D2009E1018 /* Resources */,
@@ -189,13 +191,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		A5FB3070255675E9009E1018 /* Server */ = {
+		A5FB3070255675E9009E1018 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A56FB3632556FE00007C0EC7 /* Models.swift */,
 				A5FB30622555F285009E1018 /* Server.swift */,
 				A5FB307C255681A9009E1018 /* Storage.swift */,
 			);
-			path = Server;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A5FB3078255678C9009E1018 /* Extenstions */ = {
@@ -331,11 +334,11 @@
 				A5FB3076255678A8009E1018 /* UIView+Utils.swift in Sources */,
 				A5FB30822556923E009E1018 /* NamePopupController.swift in Sources */,
 				A5B9DFDF2556BE0B00E91051 /* RoomVooterCell.swift in Sources */,
-				A5FB30602555F1FC009E1018 /* RoomViewModel.swift in Sources */,
 				84F4F0E025569B8D008E97FC /* MyCollectionCell.swift in Sources */,
 				84F4F0D925568B24008E97FC /* CardView.swift in Sources */,
 				A5FB30532555E813009E1018 /* VoteController.swift in Sources */,
 				A5FB307D255681A9009E1018 /* Storage.swift in Sources */,
+				A56FB3642556FE00007C0EC7 /* Models.swift in Sources */,
 				A5FB30562555E82D009E1018 /* ResultController.swift in Sources */,
 				845EECC52556B9D200045425 /* UILabel+Utils.swift in Sources */,
 				A5FB303D2555AD3E009E1018 /* AppDelegate.swift in Sources */,
@@ -489,7 +492,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Purple;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X7A879TDJR;
+				DEVELOPMENT_TEAM = CT884K7983;
 				INFOPLIST_FILE = JunctionApp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -510,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Purple;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X7A879TDJR;
+				DEVELOPMENT_TEAM = CT884K7983;
 				INFOPLIST_FILE = JunctionApp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
