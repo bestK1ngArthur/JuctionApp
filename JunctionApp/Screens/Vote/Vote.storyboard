@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZmH-P9-rqA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,17 +11,80 @@
         <!--Vote Controller-->
         <scene sceneID="9ep-s1-oOf">
             <objects>
-                <viewController id="ZmH-P9-rqA" customClass="VoteController" sceneMemberID="viewController">
+                <viewController id="ZmH-P9-rqA" customClass="VoteController" customModule="JunctionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="reN-Cp-q05">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3QX-TG-l4P">
+                                <rect key="frame" x="16" y="60" width="382" height="786"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dh0-B7-iNb" customClass="CardView" customModule="JunctionApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="389"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dh-eg-NN0">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="389"/>
+                                                <connections>
+                                                    <action selector="chooseFirst" destination="ZmH-P9-rqA" eventType="touchUpInside" id="lFU-jF-m9B"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="5dh-eg-NN0" firstAttribute="leading" secondItem="dh0-B7-iNb" secondAttribute="leading" id="6XF-99-A1b"/>
+                                            <constraint firstAttribute="bottom" secondItem="5dh-eg-NN0" secondAttribute="bottom" id="hkf-P5-A3o"/>
+                                            <constraint firstItem="5dh-eg-NN0" firstAttribute="top" secondItem="dh0-B7-iNb" secondAttribute="top" id="ht0-qP-Ged"/>
+                                            <constraint firstAttribute="trailing" secondItem="5dh-eg-NN0" secondAttribute="trailing" id="s4f-CG-f8l"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vZ-rw-x5p" customClass="CardView" customModule="JunctionApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="397" width="382" height="389"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKt-DY-x2b">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="389"/>
+                                                <connections>
+                                                    <action selector="chooseSecond" destination="ZmH-P9-rqA" eventType="touchUpInside" id="igt-Nn-Kpl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="RKt-DY-x2b" secondAttribute="trailing" id="8f9-4E-Z0h"/>
+                                            <constraint firstAttribute="bottom" secondItem="RKt-DY-x2b" secondAttribute="bottom" id="D4W-Gg-rtX"/>
+                                            <constraint firstItem="RKt-DY-x2b" firstAttribute="leading" secondItem="0vZ-rw-x5p" secondAttribute="leading" id="Yxe-rg-yVu"/>
+                                            <constraint firstItem="RKt-DY-x2b" firstAttribute="top" secondItem="0vZ-rw-x5p" secondAttribute="top" id="y5X-UY-ZH9"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="S7I-V0-Gnf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S7I-V0-Gnf" firstAttribute="trailing" secondItem="3QX-TG-l4P" secondAttribute="trailing" constant="16" id="Cfx-H9-uot"/>
+                            <constraint firstItem="3QX-TG-l4P" firstAttribute="leading" secondItem="S7I-V0-Gnf" secondAttribute="leading" constant="16" id="MC1-Rh-7bU"/>
+                            <constraint firstItem="3QX-TG-l4P" firstAttribute="top" secondItem="S7I-V0-Gnf" secondAttribute="top" constant="16" id="hT6-cA-agU"/>
+                            <constraint firstItem="S7I-V0-Gnf" firstAttribute="bottom" secondItem="3QX-TG-l4P" secondAttribute="bottom" constant="16" id="mSW-Pj-f4O"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstCard" destination="dh0-B7-iNb" id="w0J-ce-vgq"/>
+                        <outlet property="secondCard" destination="0vZ-rw-x5p" id="5Gt-sJ-SZC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4A-07-3DW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-189" y="18"/>
+            <point key="canvasLocation" x="-189.85507246376812" y="17.410714285714285"/>
         </scene>
     </scenes>
     <resources>

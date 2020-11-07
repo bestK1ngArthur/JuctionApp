@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		845EECC52556B9D200045425 /* UILabel+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EECC42556B9D200045425 /* UILabel+Utils.swift */; };
+		84F4F0D025568570008E97FC /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4F0CF25568570008E97FC /* UIImageView+Utils.swift */; };
+		84F4F0D925568B24008E97FC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4F0D825568B24008E97FC /* CardView.swift */; };
+		84F4F0DC25568B31008E97FC /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F4F0DB25568B31008E97FC /* CardView.xib */; };
+		84F4F0E025569B8D008E97FC /* MyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4F0DE25569B8D008E97FC /* MyCollectionCell.swift */; };
+		84F4F0E125569B8D008E97FC /* MyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F4F0DF25569B8D008E97FC /* MyCollectionCell.xib */; };
 		A5FB303D2555AD3E009E1018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB303C2555AD3E009E1018 /* AppDelegate.swift */; };
 		A5FB303F2555AD3E009E1018 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */; };
 		A5FB30412555AD3E009E1018 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30402555AD3E009E1018 /* RoomController.swift */; };
@@ -22,9 +28,18 @@
 		A5FB3076255678A8009E1018 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB3075255678A8009E1018 /* UIView+Utils.swift */; };
 		A5FB307D255681A9009E1018 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB307C255681A9009E1018 /* Storage.swift */; };
 		A5FB30822556923E009E1018 /* NamePopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30812556923E009E1018 /* NamePopupController.swift */; };
+		C1F6393AFD02421F50F5892D /* Pods_JunctionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C130349F163FB0C08A22D22A /* Pods_JunctionApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41EA1A7DD5DB656D5D233F6D /* Pods-JunctionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunctionApp.release.xcconfig"; path = "Target Support Files/Pods-JunctionApp/Pods-JunctionApp.release.xcconfig"; sourceTree = "<group>"; };
+		5015DF307DE5BE4448481FAB /* Pods-JunctionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunctionApp.debug.xcconfig"; path = "Target Support Files/Pods-JunctionApp/Pods-JunctionApp.debug.xcconfig"; sourceTree = "<group>"; };
+		845EECC42556B9D200045425 /* UILabel+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utils.swift"; sourceTree = "<group>"; };
+		84F4F0CF25568570008E97FC /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
+		84F4F0D825568B24008E97FC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		84F4F0DB25568B31008E97FC /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		84F4F0DE25569B8D008E97FC /* MyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionCell.swift; sourceTree = "<group>"; };
+		84F4F0DF25569B8D008E97FC /* MyCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionCell.xib; sourceTree = "<group>"; };
 		A5FB30392555AD3E009E1018 /* JunctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JunctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FB303C2555AD3E009E1018 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +57,7 @@
 		A5FB3075255678A8009E1018 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		A5FB307C255681A9009E1018 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A5FB30812556923E009E1018 /* NamePopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePopupController.swift; sourceTree = "<group>"; };
+		C130349F163FB0C08A22D22A /* Pods_JunctionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JunctionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +65,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1F6393AFD02421F50F5892D /* Pods_JunctionApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		617128A3508D2531D4743D18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C130349F163FB0C08A22D22A /* Pods_JunctionApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84F4F0E72556A388008E97FC /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				84F4F0D825568B24008E97FC /* CardView.swift */,
+				84F4F0DE25569B8D008E97FC /* MyCollectionCell.swift */,
+				84F4F0DF25569B8D008E97FC /* MyCollectionCell.xib */,
+				84F4F0DB25568B31008E97FC /* CardView.xib */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		9D0F63C068122FDC5DEB85BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5015DF307DE5BE4448481FAB /* Pods-JunctionApp.debug.xcconfig */,
+				41EA1A7DD5DB656D5D233F6D /* Pods-JunctionApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A5FB30302555AD3E009E1018 = {
 			isa = PBXGroup;
 			children = (
 				A5FB303B2555AD3E009E1018 /* JunctionApp */,
 				A5FB303A2555AD3E009E1018 /* Products */,
+				9D0F63C068122FDC5DEB85BC /* Pods */,
+				617128A3508D2531D4743D18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				A5FB30522555E813009E1018 /* VoteController.swift */,
+				84F4F0E72556A388008E97FC /* CardView */,
 				A5FB305A2555E876009E1018 /* Vote.storyboard */,
 			);
 			path = Vote;
@@ -154,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				A5FB3075255678A8009E1018 /* UIView+Utils.swift */,
+				84F4F0CF25568570008E97FC /* UIImageView+Utils.swift */,
+				845EECC42556B9D200045425 /* UILabel+Utils.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -165,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5FB304D2555AD41009E1018 /* Build configuration list for PBXNativeTarget "JunctionApp" */;
 			buildPhases = (
+				A4D6EF9EE2E69AC1829BA4AC /* [CP] Check Pods Manifest.lock */,
 				A5FB30352555AD3E009E1018 /* Sources */,
 				A5FB30362555AD3E009E1018 /* Frameworks */,
 				A5FB30372555AD3E009E1018 /* Resources */,
+				63AD78F70D81395710C0FE7B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,13 +269,57 @@
 			files = (
 				A5FB30672556758B009E1018 /* Result.storyboard in Resources */,
 				A5FB305B2555E876009E1018 /* Vote.storyboard in Resources */,
+				84F4F0DC25568B31008E97FC /* CardView.xib in Resources */,
 				A5FB30492555AD41009E1018 /* LaunchScreen.storyboard in Resources */,
+				84F4F0E125569B8D008E97FC /* MyCollectionCell.xib in Resources */,
 				A5FB30462555AD41009E1018 /* Assets.xcassets in Resources */,
 				A5FB30442555AD3E009E1018 /* Room.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63AD78F70D81395710C0FE7B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JunctionApp/Pods-JunctionApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JunctionApp/Pods-JunctionApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JunctionApp/Pods-JunctionApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4D6EF9EE2E69AC1829BA4AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JunctionApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A5FB30352555AD3E009E1018 /* Sources */ = {
@@ -235,10 +331,14 @@
 				A5FB3076255678A8009E1018 /* UIView+Utils.swift in Sources */,
 				A5FB30822556923E009E1018 /* NamePopupController.swift in Sources */,
 				A5FB30602555F1FC009E1018 /* RoomViewModel.swift in Sources */,
+				84F4F0E025569B8D008E97FC /* MyCollectionCell.swift in Sources */,
+				84F4F0D925568B24008E97FC /* CardView.swift in Sources */,
 				A5FB30532555E813009E1018 /* VoteController.swift in Sources */,
 				A5FB307D255681A9009E1018 /* Storage.swift in Sources */,
 				A5FB30562555E82D009E1018 /* ResultController.swift in Sources */,
+				845EECC52556B9D200045425 /* UILabel+Utils.swift in Sources */,
 				A5FB303D2555AD3E009E1018 /* AppDelegate.swift in Sources */,
+				84F4F0D025568570008E97FC /* UIImageView+Utils.swift in Sources */,
 				A5FB303F2555AD3E009E1018 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,11 +483,12 @@
 		};
 		A5FB304E2555AD41009E1018 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5015DF307DE5BE4448481FAB /* Pods-JunctionApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Purple;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CT884K7983;
+				DEVELOPMENT_TEAM = X7A879TDJR;
 				INFOPLIST_FILE = JunctionApp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -403,11 +504,12 @@
 		};
 		A5FB304F2555AD41009E1018 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41EA1A7DD5DB656D5D233F6D /* Pods-JunctionApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Purple;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CT884K7983;
+				DEVELOPMENT_TEAM = X7A879TDJR;
 				INFOPLIST_FILE = JunctionApp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
