@@ -22,10 +22,19 @@ class Storage {
     
     var roomID: RoomID? {
         get {
-            userDefaults.value(forKey: roomIDKey) as? Int
+            userDefaults.string(forKey: roomIDKey)
         }
         set {
             userDefaults.set(newValue, forKey: roomIDKey)
+        }
+    }
+    
+    var isJoined: Bool {
+        get {
+            userDefaults.bool(forKey: isJoinedKey)
+        }
+        set {
+            userDefaults.set(newValue, forKey: isJoinedKey)
         }
     }
     
@@ -33,4 +42,5 @@ class Storage {
     
     private let userNameKey = "userName"
     private let roomIDKey = "roomID"
+    private let isJoinedKey = "isJoined"
 }

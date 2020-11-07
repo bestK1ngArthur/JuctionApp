@@ -48,8 +48,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let url = URLContexts.first?.url.absoluteString,
-              let string = url.components(separatedBy: "://").last,
-              let roomID = Int(string) else {
+              let roomID = url.components(separatedBy: "://").last else {
             return
         }
 

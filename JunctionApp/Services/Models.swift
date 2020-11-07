@@ -21,15 +21,17 @@ struct User: Codable, Equatable {
     }
 }
 
-typealias RoomID = Int
+typealias RoomID = String
 
 struct Room: Codable, Equatable {
     let id: RoomID
-    let link: String
+    let voters: [Voter]
     
-    init(id: RoomID) {
-        self.id = id
-        self.link = "takto://\(id)"
+    var link: String { "takto://\(id)" }
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "room_id"
+        case voters = "users"
     }
 }
 
@@ -47,6 +49,11 @@ struct Voter: Codable, Equatable {
     enum Status: String, Codable, Equatable {
         case voting
         case finished
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "username"
+        case status
     }
 }
 
