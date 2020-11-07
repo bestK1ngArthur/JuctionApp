@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		845EECC52556B9D200045425 /* UILabel+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EECC42556B9D200045425 /* UILabel+Utils.swift */; };
+		84BC2444255717B3006B86C4 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC2443255717B3006B86C4 /* ResultTableViewCell.swift */; };
 		84F4F0D025568570008E97FC /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4F0CF25568570008E97FC /* UIImageView+Utils.swift */; };
 		84F4F0D925568B24008E97FC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4F0D825568B24008E97FC /* CardView.swift */; };
 		84F4F0DC25568B31008E97FC /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F4F0DB25568B31008E97FC /* CardView.xib */; };
@@ -37,6 +38,7 @@
 		41EA1A7DD5DB656D5D233F6D /* Pods-JunctionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunctionApp.release.xcconfig"; path = "Target Support Files/Pods-JunctionApp/Pods-JunctionApp.release.xcconfig"; sourceTree = "<group>"; };
 		5015DF307DE5BE4448481FAB /* Pods-JunctionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunctionApp.debug.xcconfig"; path = "Target Support Files/Pods-JunctionApp/Pods-JunctionApp.debug.xcconfig"; sourceTree = "<group>"; };
 		845EECC42556B9D200045425 /* UILabel+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utils.swift"; sourceTree = "<group>"; };
+		84BC2443255717B3006B86C4 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		84F4F0CF25568570008E97FC /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		84F4F0D825568B24008E97FC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		84F4F0DB25568B31008E97FC /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				A5FB30552555E82D009E1018 /* ResultController.swift */,
+				84BC2443255717B3006B86C4 /* ResultTableViewCell.swift */,
 				A5FB30662556758B009E1018 /* Result.storyboard */,
 			);
 			path = Result;
@@ -344,6 +347,7 @@
 				A5FB307D255681A9009E1018 /* Storage.swift in Sources */,
 				A56FB3642556FE00007C0EC7 /* Models.swift in Sources */,
 				A5FB30562555E82D009E1018 /* ResultController.swift in Sources */,
+				84BC2444255717B3006B86C4 /* ResultTableViewCell.swift in Sources */,
 				845EECC52556B9D200045425 /* UILabel+Utils.swift in Sources */,
 				A5FB303D2555AD3E009E1018 /* AppDelegate.swift in Sources */,
 				84F4F0D025568570008E97FC /* UIImageView+Utils.swift in Sources */,
