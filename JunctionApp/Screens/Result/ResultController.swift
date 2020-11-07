@@ -11,17 +11,10 @@ import UIKit
 class ResultController: UIViewController {
     var places: [Place]? = []
     
-    
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
-        Server.current.getFirstPlaces { [weak self] (places) in
-            if places.isEmpty {
-                self?.dismiss(animated: true, completion: nil)
-            } else {
-                self?.places = places
-                self?.tableView.reloadData()
-            }
-        }
+        super.viewDidLoad()
     }
 }
 

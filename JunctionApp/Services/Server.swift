@@ -17,7 +17,7 @@ class Server {
     func createUser(_ user: User, completion: @escaping VoidCompletion) {
         let url = baseURL.appendingPathComponent("user")
         
-        request(.post, modelType: VoidResponse.self, url: url, body: ["username": user.identifier]) { response in
+        request(.post, modelType: VoidResponse.self, url: url, body: ["username": user.name]) { response in
             guard case .success = response else { return }
 
             DispatchQueue.main.async {
@@ -62,20 +62,28 @@ class Server {
         }
     }
     
-    func getFirstPlaces(completion: @escaping PlacesCompletion) {
-        let url = baseURL.appendingPathComponent("business/kUPlKgW6OLRw8_rrYtBV3A")
+    func getFirstPlaces(for roomID: RoomID, completion: @escaping PlacesCompletion) {
+        let url = baseURL.appendingPathComponent("room/\(roomID)/choice")
         
-        request(.get, modelType: Place.self, url: url) { response in
-            guard case let .success(place) = response else { return }
+        request(.get, modelType: PlacesPairResponse.self, url: url) { response in
+            guard case let .success(pair) = response else { return }
 
             DispatchQueue.main.async {
-                completion([place, place])
+                completion([pair.first, pair.second])
             }
         }
     }
         
-    func choosePlace(_ placeID: PlaceID, completion: @escaping PlacesCompletion) {
-        getFirstPlaces(completion: completion)
+    func choosePlace(isFirstPlace: Bool, for roomID: RoomID, completion: @escaping PlacesCompletion) {
+        let url = baseURL.appendingPathComponent("room/\(roomID)/choice")
+        
+        request(.put, modelType: PlacesPairResponse.self, url: url, body: ["first_business_chosen": "\(isFirstPlace)"]) { response in
+            guard case let .success(pair) = response else { return }
+
+            DispatchQueue.main.async {
+                completion([pair.first, pair.second])
+            }
+        }
     }
     
     // MARK: Requests
@@ -111,6 +119,8 @@ class Server {
             get(url: url, modelType: modelType, completion: completion)
         case .post:
             post(url: url, body: body, modelType: modelType, completion: completion)
+        case .put:
+            put(url: url, body: body, modelType: modelType, completion: completion)
         }
     }
     
@@ -171,6 +181,37 @@ class Server {
         
         task.resume()
     }
+    
+    private func put<Model: Decodable>(url: URL, body: [String: String]? = nil, modelType: Model.Type, completion: @escaping (Result<Model>) -> Void) {
+        var request = URLRequest(url: url)
+                
+        headers.forEach { field, value in
+            request.addValue(value, forHTTPHeaderField: field)
+        }
+        
+        request.httpMethod = "PUT"
+        
+        if let body = body, let encodedData = try? encoder.encode(body) {
+            request.httpBody = encodedData
+        }
+        
+        let task = session.dataTask(with: request) { [unowned self] data, response, error in
+            if let error = error, data == nil {
+                completion(.failure(error))
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let model = try self.decoder.decode(Model.self, from: data)
+                completion(.success(model))
+            } catch let error {
+                fatalError(error.localizedDescription)
+            }
+        }
+        
+        task.resume()
+    }
 }
 
 extension Server {
@@ -182,6 +223,7 @@ extension Server {
     enum RequestType {
         case get
         case post
+        case put
     }
 }
 
@@ -191,5 +233,15 @@ extension Server {
 
     struct PlacesResponse: Decodable {
         let results: [Place]
+    }
+    
+    struct PlacesPairResponse: Decodable {
+        let first: Place
+        let second: Place
+        
+        enum CodingKeys: String, CodingKey {
+            case first = "first_business"
+            case second = "second_business"
+        }
     }
 }

@@ -74,8 +74,13 @@ struct Place: Codable, Equatable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         let photos = try container.decode([[String: String]].self, forKey: .photo)
-        let photoID = photos.first!["photo_id"]!
-        photo = "http://84.201.163.58:33319/photos/\(photoID).jpg"
+        
+        if let photoID = photos.first?["photo_id"] {
+            photo = "http://84.201.163.58:33319/photos/\(photoID).jpg"
+        } else {
+            photo = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.brendanvacations.com%2Fmedia%2F2351%2Fthe-davenport-restaurant.jpg&f=1&nofb=1"
+        }
+        
         name = try container.decode(String.self, forKey: .name)
         cuisines = ["european", "mexican"] //try container.decode([String].self, forKey: .cuisines)
         isOpen = try container.decode(
