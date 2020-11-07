@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,8 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhg-yz-Z5L">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" name="Purple"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEs-P1-iYd">
+                                <rect key="frame" x="0.0" y="690" width="414" height="206"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="24"/>
@@ -171,6 +180,7 @@
                             <constraint firstItem="fYj-RL-Ucd" firstAttribute="centerY" secondItem="1zc-uS-NEM" secondAttribute="centerY" id="EK5-lS-Olf"/>
                             <constraint firstItem="xte-J6-DA2" firstAttribute="top" secondItem="1zc-uS-NEM" secondAttribute="bottom" constant="8" id="EtO-pq-yKD"/>
                             <constraint firstAttribute="bottom" secondItem="lhg-yz-Z5L" secondAttribute="bottom" id="LAA-3q-dRT"/>
+                            <constraint firstItem="8g6-Ja-9uc" firstAttribute="top" secondItem="CEs-P1-iYd" secondAttribute="top" constant="36" id="QYc-BX-zqa"/>
                             <constraint firstItem="lhg-yz-Z5L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QfX-nm-9xZ"/>
                             <constraint firstItem="8g6-Ja-9uc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TJg-ba-7dq"/>
                             <constraint firstItem="ReP-VJ-Ilz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="U32-eZ-nAv"/>
@@ -178,8 +188,11 @@
                             <constraint firstItem="xte-J6-DA2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YS0-yx-Tua"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lhg-yz-Z5L" secondAttribute="trailing" id="a47-e6-Zrf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ReP-VJ-Ilz" secondAttribute="trailing" constant="16" id="arU-eC-Bt8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CEs-P1-iYd" secondAttribute="trailing" id="jaO-sw-QOX"/>
                             <constraint firstItem="1zc-uS-NEM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="mxD-0Q-7hz"/>
-                            <constraint firstItem="lhg-yz-Z5L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nGj-wC-Dqj"/>
+                            <constraint firstItem="lhg-yz-Z5L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nGj-wC-Dqj"/>
+                            <constraint firstItem="CEs-P1-iYd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uxK-R7-nfa"/>
+                            <constraint firstAttribute="bottom" secondItem="CEs-P1-iYd" secondAttribute="bottom" id="wJb-de-b4V"/>
                         </constraints>
                     </view>
                     <connections>
@@ -237,6 +250,18 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOu-qb-j8o">
                                 <rect key="frame" x="0.0" y="398" width="414" height="498"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1q-17-OIB">
+                                        <rect key="frame" x="0.0" y="498" width="414" height="0.0"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="Lhe-UZ-H6Z"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMK-tV-zv6">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="498"/>
                                         <subviews>
@@ -317,10 +342,13 @@
                                 </subviews>
                                 <color key="backgroundColor" name="Purple"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="O1q-17-OIB" secondAttribute="bottom" id="1KE-GC-Wsn"/>
                                     <constraint firstAttribute="height" constant="498" id="Bx4-Bn-5YC"/>
+                                    <constraint firstAttribute="trailing" secondItem="O1q-17-OIB" secondAttribute="trailing" id="Pyg-J4-T5n"/>
                                     <constraint firstItem="KMK-tV-zv6" firstAttribute="leading" secondItem="WOu-qb-j8o" secondAttribute="leading" id="ZS9-T8-bvR"/>
                                     <constraint firstAttribute="bottom" secondItem="KMK-tV-zv6" secondAttribute="bottom" id="ep1-uz-LTW"/>
                                     <constraint firstAttribute="trailing" secondItem="KMK-tV-zv6" secondAttribute="trailing" id="iie-as-eOX"/>
+                                    <constraint firstItem="O1q-17-OIB" firstAttribute="leading" secondItem="WOu-qb-j8o" secondAttribute="leading" id="nd3-ty-q08"/>
                                     <constraint firstItem="KMK-tV-zv6" firstAttribute="top" secondItem="WOu-qb-j8o" secondAttribute="top" id="taR-pX-2Uj"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -343,6 +371,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonCard" destination="O1q-17-OIB" id="tzw-fZ-WvK"/>
+                        <outlet property="buttonCardConstraint" destination="Lhe-UZ-H6Z" id="O2G-uN-b7V"/>
                         <outlet property="cardView" destination="KMK-tV-zv6" id="qdX-nj-3y8"/>
                         <outlet property="heightConstraint" destination="Bx4-Bn-5YC" id="JYg-Hs-IeR"/>
                         <outlet property="nameField" destination="8vo-AB-kzr" id="Ffq-2L-kUl"/>
