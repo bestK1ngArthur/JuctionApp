@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5B9DFDF2556BE0B00E91051 /* RoomVooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9DFDE2556BE0B00E91051 /* RoomVooterCell.swift */; };
 		A5FB303D2555AD3E009E1018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB303C2555AD3E009E1018 /* AppDelegate.swift */; };
 		A5FB303F2555AD3E009E1018 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */; };
 		A5FB30412555AD3E009E1018 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30402555AD3E009E1018 /* RoomController.swift */; };
@@ -16,7 +17,6 @@
 		A5FB30532555E813009E1018 /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30522555E813009E1018 /* VoteController.swift */; };
 		A5FB30562555E82D009E1018 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30552555E82D009E1018 /* ResultController.swift */; };
 		A5FB305B2555E876009E1018 /* Vote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FB305A2555E876009E1018 /* Vote.storyboard */; };
-		A5FB30602555F1FC009E1018 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB305F2555F1FC009E1018 /* RoomViewModel.swift */; };
 		A5FB30632555F285009E1018 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30622555F285009E1018 /* Server.swift */; };
 		A5FB30672556758B009E1018 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FB30662556758B009E1018 /* Result.storyboard */; };
 		A5FB3076255678A8009E1018 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB3075255678A8009E1018 /* UIView+Utils.swift */; };
@@ -25,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5B9DFDE2556BE0B00E91051 /* RoomVooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomVooterCell.swift; sourceTree = "<group>"; };
 		A5FB30392555AD3E009E1018 /* JunctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JunctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FB303C2555AD3E009E1018 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		A5FB30522555E813009E1018 /* VoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
 		A5FB30552555E82D009E1018 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		A5FB305A2555E876009E1018 /* Vote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vote.storyboard; sourceTree = "<group>"; };
-		A5FB305F2555F1FC009E1018 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		A5FB30622555F285009E1018 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		A5FB30662556758B009E1018 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 		A5FB3075255678A8009E1018 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				A5FB30812556923E009E1018 /* NamePopupController.swift */,
-				A5FB305F2555F1FC009E1018 /* RoomViewModel.swift */,
+				A5B9DFDE2556BE0B00E91051 /* RoomVooterCell.swift */,
 				A5FB30402555AD3E009E1018 /* RoomController.swift */,
 				A5FB30422555AD3E009E1018 /* Room.storyboard */,
 			);
@@ -234,7 +234,7 @@
 				A5FB30412555AD3E009E1018 /* RoomController.swift in Sources */,
 				A5FB3076255678A8009E1018 /* UIView+Utils.swift in Sources */,
 				A5FB30822556923E009E1018 /* NamePopupController.swift in Sources */,
-				A5FB30602555F1FC009E1018 /* RoomViewModel.swift in Sources */,
+				A5B9DFDF2556BE0B00E91051 /* RoomVooterCell.swift in Sources */,
 				A5FB30532555E813009E1018 /* VoteController.swift in Sources */,
 				A5FB307D255681A9009E1018 /* Storage.swift in Sources */,
 				A5FB30562555E82D009E1018 /* ResultController.swift in Sources */,

@@ -20,8 +20,13 @@ class Server {
         }
     }
         
-    func getRoomStatus(completion: RoomStatusCompletion) {
-        completion(RoomStatus(voters: [], places: []))
+    func getRoomStatus(for roomID: RoomID, completion: @escaping RoomStatusCompletion) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            completion(RoomStatus(voters: [
+                .init(name: "Ivan", status: .voting),
+                .init(name: "Katya", status: .finished)
+            ], places: []))
+        }
     }
     
     func getFirstPlaces(completion: PlacesCompletion) {
@@ -33,7 +38,7 @@ class Server {
     }
 }
 
-struct User {
+struct User: Equatable {
     let name: String
     let identifier: String
     
@@ -49,7 +54,7 @@ struct User {
 
 typealias RoomID = Int
 
-struct Room {
+struct Room: Equatable {
     let id: RoomID
     let link: String
     
@@ -61,24 +66,29 @@ struct Room {
 
 typealias PlaceID = Int
 
-struct Voter {
+struct Voter: Equatable {
     let name: String
     let status: Status
     
-    enum Status {
+    var initials: String {
+        guard let firstLetter = name.first else { return "" }
+        return String(firstLetter)
+    }
+    
+    enum Status: String, Equatable {
         case voting
         case finished
     }
 }
 
-struct Place {
+struct Place: Equatable {
     let name: String
     let photo: String
     let cuisines: [String]
     let isOpen: Bool
 }
 
-struct RoomStatus {
+struct RoomStatus: Equatable {
     let voters: [Voter]
     let places: [Place]
 }
