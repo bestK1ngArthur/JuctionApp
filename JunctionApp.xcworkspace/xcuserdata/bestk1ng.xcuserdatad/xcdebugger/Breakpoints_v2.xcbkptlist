@@ -72,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F4CB7FF4-A6A6-4420-913B-4FA11833EA80"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JunctionApp/Screens/Room/RoomController.swift"
@@ -80,7 +80,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
-            landmarkName = "checkStartupState()"
+            landmarkName = "showIntroduction()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
