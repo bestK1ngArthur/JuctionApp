@@ -115,11 +115,11 @@ class RoomController: UIViewController {
     }
         
     private func showVote() {
-        // Show vote
+        performSegue(withIdentifier: "Vote", sender: self)
     }
     
     private func showResults() {
-        // Show results
+        performSegue(withIdentifier: "Result", sender: self)
     }
     
     @IBAction func inviteTapped(_ sender: Any) {

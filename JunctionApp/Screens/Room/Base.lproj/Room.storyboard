@@ -44,7 +44,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="voteTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="knN-RT-h0I"/>
-                                    <segue destination="mzQ-nf-6y3" kind="show" id="d9y-UD-hyf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8g6-Ja-9uc">
@@ -175,6 +174,8 @@
                         <outlet property="shareButtonBottomConstraint" destination="WTq-c8-zV4" id="W2S-5Y-vl7"/>
                         <outlet property="voteButton" destination="ReP-VJ-Ilz" id="LLL-2c-UN5"/>
                         <outlet property="votersCollectionView" destination="xte-J6-DA2" id="m2u-6v-t0J"/>
+                        <segue destination="mzQ-nf-6y3" kind="show" identifier="Vote" id="iIG-zJ-76f"/>
+                        <segue destination="hqT-R0-qLO" kind="show" identifier="Result" id="nMI-Hh-kT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -190,6 +191,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IRT-cJ-CdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="303" y="119"/>
+        </scene>
+        <!--Result-->
+        <scene sceneID="lKQ-he-sih">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Result" id="hqT-R0-qLO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="FRd-xL-GMi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pch-E1-VSo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371" y="210"/>
         </scene>
         <!--Name Popup Controller-->
         <scene sceneID="wW3-nb-5kO">
