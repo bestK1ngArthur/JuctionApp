@@ -19,6 +19,7 @@
 		A5FB30602555F1FC009E1018 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB305F2555F1FC009E1018 /* RoomViewModel.swift */; };
 		A5FB30632555F285009E1018 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30622555F285009E1018 /* Server.swift */; };
 		A5FB30672556758B009E1018 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FB30662556758B009E1018 /* Result.storyboard */; };
+		A5FB3076255678A8009E1018 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB3075255678A8009E1018 /* UIView+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A5FB305F2555F1FC009E1018 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		A5FB30622555F285009E1018 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		A5FB30662556758B009E1018 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		A5FB3075255678A8009E1018 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				A5FB306F255675DD009E1018 /* App */,
 				A5FB3070255675E9009E1018 /* Server */,
 				A5FB306C255675C3009E1018 /* Screens */,
+				A5FB3078255678C9009E1018 /* Extenstions */,
 				A5FB306E255675D2009E1018 /* Resources */,
 			);
 			path = JunctionApp;
@@ -139,6 +142,14 @@
 				A5FB30622555F285009E1018 /* Server.swift */,
 			);
 			path = Server;
+			sourceTree = "<group>";
+		};
+		A5FB3078255678C9009E1018 /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB3075255678A8009E1018 /* UIView+Utils.swift */,
+			);
+			path = Extenstions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 			files = (
 				A5FB30632555F285009E1018 /* Server.swift in Sources */,
 				A5FB30412555AD3E009E1018 /* RoomController.swift in Sources */,
+				A5FB3076255678A8009E1018 /* UIView+Utils.swift in Sources */,
 				A5FB30602555F1FC009E1018 /* RoomViewModel.swift in Sources */,
 				A5FB30532555E813009E1018 /* VoteController.swift in Sources */,
 				A5FB30562555E82D009E1018 /* ResultController.swift in Sources */,
