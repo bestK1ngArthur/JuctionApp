@@ -84,5 +84,85 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "133BD79B-2D08-485F-A858-A8A421FE047B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Models.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F09708D-BA96-4E81-8F07-403786F49646"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Server.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "get(url:modelType:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6F09708D-BA96-4E81-8F07-403786F49646 - 472b13f52a0bd56a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JunctionApp.Server.(get in _FE0A0FD19641931194D5621597631E07)&lt;A where A: Swift.Decodable&gt;(url: Foundation.URL, modelType: A.Type, completion: (JunctionApp.Server.Result&lt;A&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "JunctionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bestk1ng/Developer/Hackathons/JunctionApp/JunctionApp/Services/Server.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "812">
+               </Location>
+               <Location
+                  uuid = "6F09708D-BA96-4E81-8F07-403786F49646 - 36047acd499d46d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in JunctionApp.Server.(get in _FE0A0FD19641931194D5621597631E07)&lt;A where A: Swift.Decodable&gt;(url: Foundation.URL, modelType: A.Type, completion: (JunctionApp.Server.Result&lt;A&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "JunctionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bestk1ng/Developer/Hackathons/JunctionApp/JunctionApp/Services/Server.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "524">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D58BC75-D48E-4EAF-8861-4F586DBF87D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Locator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -63,29 +63,19 @@ class Server {
     }
     
     func getFirstPlaces(completion: @escaping PlacesCompletion) {
-        let url = baseURL.appendingPathComponent("business")
+        let url = baseURL.appendingPathComponent("business/kUPlKgW6OLRw8_rrYtBV3A")
         
-        request(.get, modelType: PlacesResponse.self, url: url) { response in
-            guard case let .success(data) = response else { return }
+        request(.get, modelType: Place.self, url: url) { response in
+            guard case let .success(place) = response else { return }
 
             DispatchQueue.main.async {
-                completion(data.results)
+                completion([place, place])
             }
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-            let place = [Place(name: "Macdonalds", photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", cuisines: ["hui","pizda","scovoroda"], isOpen: true),
-                         Place(name: "Ocherednaya Pomoika", photo: "https://d2w1ef2ao9g8r9.cloudfront.net/images/floorplan.png?mtime=20200424135830&focal=none", cuisines: ["pizda","scovoroda"], isOpen: false)]
-            completion(place)
         }
     }
         
     func choosePlace(_ placeID: PlaceID, completion: @escaping PlacesCompletion) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-            let place = [Place(name: "Macdonalds2", photo: "https://lh3.googleusercontent.com/proxy/uDypGXLa53HqrzdJxwG9kZbblKS4pqGTbnrp4qUUSTi2rvGUEKEibAlOSIOlAG8LRb3yuGyrlADyQ_s5swehKc7944XPdRf6kbX7GOSgCu0dBXQ76EUwWfnPTP97Sdts8NHoKZ1_e_9lxoFdRw", cuisines: ["hui","pizda","scovoroda"], isOpen: true),
-                         Place(name: "Ocherednaya Pomoika 2", photo: "https://restaurantdupalaisroyal.com/wp-content/uploads/2020/02/Restaurant_du_Palais_Royal_RDC_11_GdeLaubier.jpg", cuisines: ["pizda","scovoroda"], isOpen: false)]
-            completion(place)
-        }
+        getFirstPlaces(completion: completion)
     }
     
     // MARK: Requests
@@ -96,11 +86,21 @@ class Server {
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
 
-    private let headers = [
+    private var latitude: String? {
+        guard let latitude = Locator.current.location?.coordinate.latitude else { return nil }
+        return String(latitude)
+    }
+    
+    private var longitude: String? {
+        guard let longitude = Locator.current.location?.coordinate.longitude else { return nil }
+        return String(longitude)
+    }
+    
+    private lazy var headers = [
         "Authorization": "bearer \(UIDevice.current.identifierForVendor!.uuidString)",
-        "X-Latitude": "55.718070",
-        "X-Longitude": "37.424821",
-        "X-City": "Moscow",
+        "X-Latitude": latitude ?? "55.718070",
+        "X-Longitude": longitude ?? "37.424821",
+        "X-City": Locator.current.city ?? "Moscow",
         "Accept": "application/json",
         "Content-Type": "application/json"
     ]

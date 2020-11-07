@@ -65,9 +65,21 @@ struct Place: Codable, Equatable {
     
     enum CodingKeys: String, CodingKey {
         case name
-        case photo = "business_id"
-        case cuisines
+        case photo = "photos"
+        case cuisines = "categories"
         case isOpen = "is_open"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        let photos = try container.decode([[String: String]].self, forKey: .photo)
+        let photoID = photos.first!["photo_id"]!
+        photo = "http://84.201.163.58:33319/photos/\(photoID).jpg"
+        name = try container.decode(String.self, forKey: .name)
+        cuisines = ["european", "mexican"] //try container.decode([String].self, forKey: .cuisines)
+        isOpen = try container.decode(
+            Bool.self, forKey: .isOpen)
     }
 }
 
