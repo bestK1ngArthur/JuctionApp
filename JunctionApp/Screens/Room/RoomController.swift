@@ -24,6 +24,10 @@ class RoomController: UIViewController {
         
         showIntroduction()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

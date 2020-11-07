@@ -15,6 +15,9 @@ class NamePopupController: UIViewController {
     
     @IBOutlet weak var cardView: UIView!
     
+    @IBOutlet weak var buttonCardConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var buttonCard: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,8 +37,14 @@ class NamePopupController: UIViewController {
         UIView.animate(withDuration: 0.1) {
             self.cardView.alpha = 0.0
         } completion: { (_) in
-            UIView.animate(withDuration: 0.3) {
-                self.heightConstraint.constant = self.view.bounds.height - 44
+            UIView.animateKeyframes(withDuration: 0.4, delay: 0, options: []) {
+                UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.2) {
+                        self.buttonCardConstraint.constant = 132
+                }
+                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.4) {
+                        self.heightConstraint.constant = self.view.bounds.height
+                }
+
                 self.view.layoutIfNeeded()
             } completion: { (_) in
                 UIView.animate(withDuration: 0.2) {
