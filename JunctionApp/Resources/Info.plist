@@ -80,5 +80,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need location to suggest places in your city</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need location to suggest places in your city</string>
 </dict>
 </plist>

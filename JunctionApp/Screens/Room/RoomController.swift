@@ -63,7 +63,7 @@ class RoomController: UIViewController {
             state = .notCreated
         }
     }
-    
+        
     private var updateTimer: Timer?
     
     private var state: State = .notCreated {
