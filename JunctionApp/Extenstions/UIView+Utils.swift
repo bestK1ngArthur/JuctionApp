@@ -15,10 +15,10 @@ extension UIView {
         set { layer.cornerRadius = newValue }
     }
     
-    func animateHidden(_ isHidden: Bool, with duration: TimeInterval = 0.3) {
+    func animateHidden(_ isHidden: Bool, with duration: TimeInterval = 0.3, options: AnimationOptions = []) {
         
         if isHidden {
-            UIView.animate(withDuration: duration, animations: {
+            UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
                 self.alpha = 0
             }, completion: { _ in
                 self.isHidden = true

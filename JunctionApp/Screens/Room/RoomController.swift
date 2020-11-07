@@ -13,6 +13,7 @@ class RoomController: UIViewController {
     @IBOutlet weak var votersCollectionView: UICollectionView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var voteButton: UIButton!
+    @IBOutlet weak var indicator: UIView!
     
     @IBOutlet weak var shareButtonBottomConstraint: NSLayoutConstraint!
     
@@ -82,6 +83,7 @@ class RoomController: UIViewController {
     }
     
     private func startTimer() {
+        startIndicating()
         updateTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [unowned self] _ in
             self.loadVoters()
         })
@@ -122,6 +124,15 @@ class RoomController: UIViewController {
         performSegue(withIdentifier: "Result", sender: self)
     }
     
+    private func startIndicating() {
+        indicator.animateHidden(false, options: [.repeat, .autoreverse])
+        indicator.animateHidden(true, options: [.repeat, .autoreverse])
+    }
+    
+    private func endIndicating() {
+        indicator.layer.removeAllAnimations()
+    }
+    
     @IBAction func inviteTapped(_ sender: Any) {
         if room != nil {
             showShareSheet()
@@ -129,7 +140,10 @@ class RoomController: UIViewController {
             guard let name = Storage.current.userName else { return }
             let user = User(name: name)
             
+            self.startIndicating()
             Server.current.createRoom(for: user) { [unowned self] room in
+                self.endIndicating()
+                
                 Storage.current.roomID = room.id
                 self.room = room
                 self.showShareSheet()
