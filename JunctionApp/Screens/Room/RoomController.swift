@@ -22,13 +22,13 @@ class RoomController: UIViewController {
 
         votersCollectionView.dataSource = self
         
-        checkStartupState()
         showIntroduction()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
+        checkStartupState()
         showNamePopupIfNeeded()
     }
     
@@ -40,9 +40,21 @@ class RoomController: UIViewController {
     
     func checkStartupState() {
         if let roomID = Storage.current.roomID {
-            room = Room(id: roomID)
+            room = Room(id: roomID, voters: [])
             state = .created
             startTimer()
+
+            if !Storage.current.isJoined {
+                guard let name = Storage.current.userName else { return }
+                let user = User(name: name)
+
+                Server.current.createUser(user) {
+                    Server.current.joinRoom(for: roomID) { _ in
+                        Storage.current.isJoined = true
+                    }
+                }
+            }
+
         } else {
             state = .notCreated
         }
@@ -92,9 +104,9 @@ class RoomController: UIViewController {
     @objc private func loadVoters() {
         guard let roomID = room?.id else { return }
         
-        Server.current.getRoomStatus(for: roomID) { [unowned self] status in
-            self.voters = status.voters
-            self.results = status.places
+        Server.current.getRoom(for: roomID) { [unowned self] room in
+            self.voters = room.voters
+            self.results = []
         }
     }
     
@@ -141,14 +153,18 @@ class RoomController: UIViewController {
             let user = User(name: name)
             
             self.startIndicating()
-            Server.current.createRoom(for: user) { [unowned self] room in
-                self.endIndicating()
-                
-                Storage.current.roomID = room.id
-                self.room = room
-                self.showShareSheet()
-                self.state = .created
-                self.startTimer()
+            Server.current.createUser(user) { [unowned self] in
+                Server.current.createRoom(for: user) { room in
+                    self.endIndicating()
+                    
+                    Storage.current.roomID = room.id
+                    Storage.current.isJoined = true
+
+                    self.room = room
+                    self.showShareSheet()
+                    self.state = .created
+                    self.startTimer()
+                }
             }
         }
     }
