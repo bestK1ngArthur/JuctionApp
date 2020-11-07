@@ -21,6 +21,11 @@ class NamePopupController: UIViewController {
         guard let name = nameField.text, !name.isEmpty else { return }
         
         Storage.current.userName = name
+        
+        if let roomController = presentingViewController as? RoomController {
+            roomController.showIntroduction()
+        }
+        
         dismiss(animated: false, completion: nil)
     }
 }

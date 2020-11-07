@@ -29,23 +29,37 @@ class RoomController: UIViewController {
         showNamePopupIfNeeded()
     }
     
+    func showIntroduction() {
+        guard let name = Storage.current.userName else { return }
+        
+        nameLabel.text = "Hi, \(name)"
+    }
+    
     private var state: State = .notCreated {
         didSet {
-            stateUpdated()
+            updateButtons()
         }
     }
     
-    private func stateUpdated() {
-        shareButton.isHidden = !state.isShareVisible
+    private var room: Room?
+    private var voters: [Voter]?
+    private var results: [Place]?
+    
+    private func updateButtons() {
+        print("Current state = \(state)")
+        
+        shareButton.animateHidden(!state.isShareVisible)
         shareButton.setTitle("Invite friends", for: .normal)
         shareButtonBottomConstraint.constant = state.isVoteVisible ? 76 : 16
         
-        voteButton.isHidden = !state.isVoteVisible
+        voteButton.animateHidden(!state.isVoteVisible)
         voteButton.isEnabled = state.isVoteEnabled
         voteButton.backgroundColor = state.isVoteEnabled ? #colorLiteral(red: 0.5960784314, green: 0.2588235294, blue: 0.3764705882, alpha: 1) : .lightGray
         voteButton.setTitle(state.voteTitle, for: .normal)
-        
-        print(state)
+
+        UIView.animate(withDuration: 0.3) { [unowned self] in
+            self.view.layoutIfNeeded()
+        }
     }
     
     private func showNamePopupIfNeeded() {
@@ -67,10 +81,43 @@ class RoomController: UIViewController {
         }
     }
     
-    private func showIntroduction() {
-        guard let name = Storage.current.userName else { return }
+    private func showShareSheet() {
+        guard let room = room else { return }
         
-        nameLabel.text = "Hi, \(name)"
+        let sheet = UIActivityViewController(activityItems: [room.link], applicationActivities: nil)
+        present(sheet, animated: true, completion: nil)
+    }
+    
+    private func showVote() {
+        // Show vote
+    }
+    
+    private func showResults() {
+        // Show results
+    }
+    
+    @IBAction func inviteTapped(_ sender: Any) {
+        if room != nil {
+            showShareSheet()
+        } else {
+            guard let name = Storage.current.userName else { return }
+            let user = User(name: name)
+            
+            Server.current.createRoom(for: user) { [unowned self] room in
+                Storage.current.roomID = room.id
+                self.room = room
+                self.state = .created
+                self.showShareSheet()
+            }
+        }
+    }
+    
+    @IBAction func voteTapped(_ sender: Any) {
+        if state == .result {
+            showResults()
+        } else if state == .created {
+            showVote()
+        }
     }
 }
 

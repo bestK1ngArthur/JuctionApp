@@ -14,8 +14,10 @@ class Server {
 
     static let current = Server()
     
-    func createRoom(for user: User, completion: RoomCompletion) {
-        completion(Room(id: 101))
+    func createRoom(for user: User, completion: @escaping RoomCompletion) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            completion(Room(id: 101))
+        }
     }
         
     func getRoomStatus(completion: RoomStatusCompletion) {

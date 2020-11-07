@@ -33,6 +33,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="voteTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="knN-RT-h0I"/>
                                     <segue destination="mzQ-nf-6y3" kind="show" id="d9y-UD-hyf"/>
                                 </connections>
                             </button>
@@ -51,6 +52,9 @@
                                         <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="inviteTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mkv-XR-6TD"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m9U-6w-Lwx">
                                 <rect key="frame" x="16" y="110" width="382" height="100"/>
@@ -124,7 +128,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4b-U0-DA7">
                                                     <rect key="frame" x="16" y="74" width="382" height="60"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Katko" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8vo-AB-kzr">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Takto" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8vo-AB-kzr">
                                                             <rect key="frame" x="16" y="8" width="350" height="44"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -226,13 +230,13 @@
     </scenes>
     <resources>
         <namedColor name="LightGray">
-            <color red="0.87444609399999995" green="0.87050718069999999" blue="0.87450325490000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.87400001287460327" green="0.87099999189376831" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Orange">
-            <color red="0.94650930170000003" green="0.62553560730000002" blue="0.50580072399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.94700002670288086" green="0.62599998712539673" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Purple">
-            <color red="0.59523850680000001" green="0.26000171900000002" blue="0.37646210190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.59607843137254901" green="0.25882352941176467" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
