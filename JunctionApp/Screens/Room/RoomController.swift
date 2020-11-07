@@ -37,6 +37,16 @@ class RoomController: UIViewController {
         nameLabel.text = "Hi, \(name)"
     }
     
+    func checkStartupState() {
+        if let roomID = Storage.current.roomID {
+            room = Room(id: roomID)
+            state = .created
+            startTimer()
+        } else {
+            state = .notCreated
+        }
+    }
+    
     private var updateTimer: Timer?
     
     private var state: State = .notCreated {
@@ -58,8 +68,6 @@ class RoomController: UIViewController {
     private var results: [Place]?
     
     private func updateButtons() {
-        print("Current state = \(state)")
-        
         shareButton.animateHidden(!state.isShareVisible)
         shareButton.setTitle("Invite friends", for: .normal)
         shareButtonBottomConstraint.constant = state.isVoteVisible ? 76 : 16
@@ -98,16 +106,6 @@ class RoomController: UIViewController {
         popup.modalPresentationStyle = .overFullScreen
         
         present(popup, animated: false, completion: nil)
-    }
-    
-    private func checkStartupState() {
-        if let roomID = Storage.current.roomID {
-            room = Room(id: roomID)
-            state = .created
-            startTimer()
-        } else {
-            state = .notCreated
-        }
     }
     
     private func showShareSheet() {

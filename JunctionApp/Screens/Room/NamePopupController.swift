@@ -24,6 +24,7 @@ class NamePopupController: UIViewController {
         
         if let roomController = presentingViewController as? RoomController {
             roomController.showIntroduction()
+            roomController.checkStartupState()
         }
         
         dismiss(animated: false, completion: nil)
