@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZmH-P9-rqA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZmH-P9-rqA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3QX-TG-l4P">
-                                <rect key="frame" x="16" y="60" width="382" height="786"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3QX-TG-l4P">
+                                <rect key="frame" x="16" y="68" width="382" height="778"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dh0-B7-iNb" customClass="CardView" customModule="JunctionApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="389"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="381"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dh-eg-NN0">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="389"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="381"/>
                                                 <connections>
                                                     <action selector="chooseFirst" destination="ZmH-P9-rqA" eventType="touchUpInside" id="lFU-jF-m9B"/>
                                                 </connections>
@@ -38,15 +39,20 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vZ-rw-x5p" customClass="CardView" customModule="JunctionApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="397" width="382" height="389"/>
+                                        <rect key="frame" x="0.0" y="397" width="382" height="381"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKt-DY-x2b">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="389"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="381"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="chooseSecond" destination="ZmH-P9-rqA" eventType="touchUpInside" id="igt-Nn-Kpl"/>
                                                 </connections>
@@ -61,7 +67,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -69,16 +75,18 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="S7I-V0-Gnf"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Orange"/>
                         <constraints>
                             <constraint firstItem="S7I-V0-Gnf" firstAttribute="trailing" secondItem="3QX-TG-l4P" secondAttribute="trailing" constant="16" id="Cfx-H9-uot"/>
                             <constraint firstItem="3QX-TG-l4P" firstAttribute="leading" secondItem="S7I-V0-Gnf" secondAttribute="leading" constant="16" id="MC1-Rh-7bU"/>
-                            <constraint firstItem="3QX-TG-l4P" firstAttribute="top" secondItem="S7I-V0-Gnf" secondAttribute="top" constant="16" id="hT6-cA-agU"/>
+                            <constraint firstItem="3QX-TG-l4P" firstAttribute="top" secondItem="S7I-V0-Gnf" secondAttribute="top" constant="24" id="hT6-cA-agU"/>
                             <constraint firstItem="S7I-V0-Gnf" firstAttribute="bottom" secondItem="3QX-TG-l4P" secondAttribute="bottom" constant="16" id="mSW-Pj-f4O"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="firstButton" destination="5dh-eg-NN0" id="c2e-Aa-C13"/>
                         <outlet property="firstCard" destination="dh0-B7-iNb" id="w0J-ce-vgq"/>
+                        <outlet property="secondButton" destination="RKt-DY-x2b" id="2q4-eh-jBb"/>
                         <outlet property="secondCard" destination="0vZ-rw-x5p" id="5Gt-sJ-SZC"/>
                     </connections>
                 </viewController>
@@ -88,6 +96,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="Orange">
+            <color red="0.94700002670288086" green="0.62599998712539673" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

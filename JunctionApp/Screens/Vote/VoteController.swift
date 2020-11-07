@@ -13,9 +13,16 @@ class VoteController: UIViewController {
     @IBOutlet weak var firstCard: CardView?
     @IBOutlet weak var secondCard: CardView?
     
+    @IBOutlet weak var firstButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
+    
     var localPlaces: [Place]?
     
     override func viewDidLoad() {
+        
+        firstButton.setBackgroundColor(UIColor.black.withAlphaComponent(0.4), for: .highlighted)
+        secondButton.setBackgroundColor(UIColor.black.withAlphaComponent(0.4), for: .highlighted)
+
         Server.current.getFirstPlaces { [weak self] (places) in
             if places.isEmpty {
                 self?.dismiss(animated: true, completion: nil)
@@ -28,19 +35,6 @@ class VoteController: UIViewController {
     }
     
     @IBAction func chooseFirst() {
-        firstCard?.startAnimation()
-        Server.current.choosePlace(1) { [weak self] (places) in
-            if places.isEmpty {
-                self?.dismiss(animated: true, completion: nil)
-            } else {
-                self?.localPlaces = places
-                self?.firstCard?.configurateCard(place: places.first)
-            }
-        }
-    }
-    
-    @IBAction func chooseSecond() {
-        print("presed")
         secondCard?.startAnimation()
         Server.current.choosePlace(1) { [weak self] (places) in
             if places.isEmpty {
@@ -52,4 +46,15 @@ class VoteController: UIViewController {
         }
     }
     
+    @IBAction func chooseSecond() {
+        firstCard?.startAnimation()
+        Server.current.choosePlace(1) { [weak self] (places) in
+            if places.isEmpty {
+                self?.dismiss(animated: true, completion: nil)
+            } else {
+                self?.localPlaces = places
+                self?.firstCard?.configurateCard(place: places.first)
+            }
+        }
+    }
 }
