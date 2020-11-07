@@ -27,6 +27,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYj-RL-Ucd">
+                                <rect key="frame" x="233" y="69" width="16" height="16"/>
+                                <color key="backgroundColor" name="LightOrange"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="8ml-cj-nz6"/>
+                                    <constraint firstAttribute="height" constant="16" id="Y3W-im-Xq5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReP-VJ-Ilz">
                                 <rect key="frame" x="16" y="802" width="382" height="60"/>
                                 <color key="backgroundColor" name="Orange"/>
@@ -66,7 +79,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zc-uS-NEM">
-                                <rect key="frame" x="16" y="60" width="382" height="34"/>
+                                <rect key="frame" x="261" y="60" width="137" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -150,12 +163,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1zc-uS-NEM" firstAttribute="leading" secondItem="fYj-RL-Ucd" secondAttribute="trailing" constant="12" id="0fT-Tr-aZb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xte-J6-DA2" secondAttribute="trailing" constant="16" id="1rQ-fB-0Ee"/>
                             <constraint firstItem="ReP-VJ-Ilz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4eH-Pd-eEH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1zc-uS-NEM" secondAttribute="trailing" constant="16" id="7Ar-HI-PPs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8g6-Ja-9uc" secondAttribute="trailing" constant="16" id="8hd-w0-P1n"/>
+                            <constraint firstItem="fYj-RL-Ucd" firstAttribute="centerY" secondItem="1zc-uS-NEM" secondAttribute="centerY" id="EK5-lS-Olf"/>
                             <constraint firstItem="xte-J6-DA2" firstAttribute="top" secondItem="1zc-uS-NEM" secondAttribute="bottom" constant="8" id="EtO-pq-yKD"/>
-                            <constraint firstItem="1zc-uS-NEM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KVV-Qp-1T7"/>
                             <constraint firstAttribute="bottom" secondItem="lhg-yz-Z5L" secondAttribute="bottom" id="LAA-3q-dRT"/>
                             <constraint firstItem="lhg-yz-Z5L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QfX-nm-9xZ"/>
                             <constraint firstItem="8g6-Ja-9uc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TJg-ba-7dq"/>
@@ -169,6 +183,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="fYj-RL-Ucd" id="phi-na-TPl"/>
                         <outlet property="nameLabel" destination="1zc-uS-NEM" id="fwg-lX-JFP"/>
                         <outlet property="shareButton" destination="8g6-Ja-9uc" id="Q2x-lq-kqV"/>
                         <outlet property="shareButtonBottomConstraint" destination="WTq-c8-zV4" id="W2S-5Y-vl7"/>
@@ -190,7 +205,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IRT-cJ-CdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="119"/>
+            <point key="canvasLocation" x="362" y="54"/>
         </scene>
         <!--Result-->
         <scene sceneID="lKQ-he-sih">
@@ -200,7 +215,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pch-E1-VSo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="371" y="210"/>
+            <point key="canvasLocation" x="370" y="178"/>
         </scene>
         <!--Name Popup Controller-->
         <scene sceneID="wW3-nb-5kO">
@@ -339,6 +354,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="LightOrange">
+            <color red="0.97100001573562622" green="0.9100000262260437" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="LightViolet">
             <color red="0.82400000095367432" green="0.77999997138977051" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
