@@ -10,7 +10,7 @@ import UIKit
 class RoomController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
-    
+    @IBOutlet weak var votersCollectionView: UICollectionView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var voteButton: UIButton!
     
@@ -19,7 +19,9 @@ class RoomController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        checkState()
+        votersCollectionView.dataSource = self
+        
+        checkStartupState()
         showIntroduction()
     }
 
@@ -35,19 +37,37 @@ class RoomController: UIViewController {
         nameLabel.text = "Hi, \(name)"
     }
     
+    func checkStartupState() {
+        if let roomID = Storage.current.roomID {
+            room = Room(id: roomID)
+            state = .created
+            startTimer()
+        } else {
+            state = .notCreated
+        }
+    }
+    
+    private var updateTimer: Timer?
+    
     private var state: State = .notCreated {
         didSet {
+            guard state != oldValue else { return }
             updateButtons()
         }
     }
     
     private var room: Room?
-    private var voters: [Voter]?
+    
+    private var voters: [Voter]? {
+        didSet {
+            guard voters != oldValue else { return }
+            votersCollectionView.reloadData()
+        }
+    }
+    
     private var results: [Place]?
     
     private func updateButtons() {
-        print("Current state = \(state)")
-        
         shareButton.animateHidden(!state.isShareVisible)
         shareButton.setTitle("Invite friends", for: .normal)
         shareButtonBottomConstraint.constant = state.isVoteVisible ? 76 : 16
@@ -62,6 +82,21 @@ class RoomController: UIViewController {
         }
     }
     
+    private func startTimer() {
+        updateTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [unowned self] _ in
+            self.loadVoters()
+        })
+    }
+
+    @objc private func loadVoters() {
+        guard let roomID = room?.id else { return }
+        
+        Server.current.getRoomStatus(for: roomID) { [unowned self] status in
+            self.voters = status.voters
+            self.results = status.places
+        }
+    }
+    
     private func showNamePopupIfNeeded() {
         guard Storage.current.userName == nil,
               let popup = storyboard?.instantiateViewController(identifier: String(describing: NamePopupController.self)) else {
@@ -73,21 +108,13 @@ class RoomController: UIViewController {
         present(popup, animated: false, completion: nil)
     }
     
-    private func checkState() {
-        if Storage.current.roomID == nil {
-            state = .notCreated
-        } else {
-            state = .created
-        }
-    }
-    
     private func showShareSheet() {
         guard let room = room else { return }
         
         let sheet = UIActivityViewController(activityItems: [room.link], applicationActivities: nil)
         present(sheet, animated: true, completion: nil)
     }
-    
+        
     private func showVote() {
         // Show vote
     }
@@ -106,8 +133,9 @@ class RoomController: UIViewController {
             Server.current.createRoom(for: user) { [unowned self] room in
                 Storage.current.roomID = room.id
                 self.room = room
-                self.state = .created
                 self.showShareSheet()
+                self.state = .created
+                self.startTimer()
             }
         }
     }
@@ -123,7 +151,7 @@ class RoomController: UIViewController {
 
 extension RoomController {
     
-    enum State {
+    enum State: Equatable {
         case notCreated
         case created
         case waiting
@@ -156,5 +184,25 @@ extension RoomController {
             case .waiting, .result: return "Show suggestions"
             }
         }
+    }
+}
+
+extension RoomController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return voters?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: RoomVooterCell.self),
+                                                            for: indexPath) as? RoomVooterCell,
+              let voters = voters, !voters.isEmpty else {
+            return UICollectionViewCell()
+        }
+        
+        let voter = voters[indexPath.row]
+        cell.configure(with: voter)
+        
+        return cell
     }
 }
