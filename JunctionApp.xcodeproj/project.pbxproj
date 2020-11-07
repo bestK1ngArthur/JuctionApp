@@ -18,6 +18,7 @@
 		A5FB305B2555E876009E1018 /* Vote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FB305A2555E876009E1018 /* Vote.storyboard */; };
 		A5FB30602555F1FC009E1018 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB305F2555F1FC009E1018 /* RoomViewModel.swift */; };
 		A5FB30632555F285009E1018 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB30622555F285009E1018 /* Server.swift */; };
+		A5FB30672556758B009E1018 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FB30662556758B009E1018 /* Result.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A5FB305A2555E876009E1018 /* Vote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vote.storyboard; sourceTree = "<group>"; };
 		A5FB305F2555F1FC009E1018 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		A5FB30622555F285009E1018 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		A5FB30662556758B009E1018 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,15 +68,10 @@
 		A5FB303B2555AD3E009E1018 /* JunctionApp */ = {
 			isa = PBXGroup;
 			children = (
-				A5FB303C2555AD3E009E1018 /* AppDelegate.swift */,
-				A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */,
-				A5FB30622555F285009E1018 /* Server.swift */,
-				A5FB30582555E869009E1018 /* Room */,
-				A5FB305D2555E87D009E1018 /* Vote */,
-				A5FB30552555E82D009E1018 /* ResultController.swift */,
-				A5FB30452555AD41009E1018 /* Assets.xcassets */,
-				A5FB30472555AD41009E1018 /* LaunchScreen.storyboard */,
-				A5FB304A2555AD41009E1018 /* Info.plist */,
+				A5FB306F255675DD009E1018 /* App */,
+				A5FB3070255675E9009E1018 /* Server */,
+				A5FB306C255675C3009E1018 /* Screens */,
+				A5FB306E255675D2009E1018 /* Resources */,
 			);
 			path = JunctionApp;
 			sourceTree = "<group>";
@@ -96,6 +93,52 @@
 				A5FB305A2555E876009E1018 /* Vote.storyboard */,
 			);
 			path = Vote;
+			sourceTree = "<group>";
+		};
+		A5FB3069255675AF009E1018 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB30552555E82D009E1018 /* ResultController.swift */,
+				A5FB30662556758B009E1018 /* Result.storyboard */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		A5FB306C255675C3009E1018 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB30582555E869009E1018 /* Room */,
+				A5FB305D2555E87D009E1018 /* Vote */,
+				A5FB3069255675AF009E1018 /* Result */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A5FB306E255675D2009E1018 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB30452555AD41009E1018 /* Assets.xcassets */,
+				A5FB30472555AD41009E1018 /* LaunchScreen.storyboard */,
+				A5FB304A2555AD41009E1018 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A5FB306F255675DD009E1018 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB303C2555AD3E009E1018 /* AppDelegate.swift */,
+				A5FB303E2555AD3E009E1018 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A5FB3070255675E9009E1018 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB30622555F285009E1018 /* Server.swift */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FB30672556758B009E1018 /* Result.storyboard in Resources */,
 				A5FB305B2555E876009E1018 /* Vote.storyboard in Resources */,
 				A5FB30492555AD41009E1018 /* LaunchScreen.storyboard in Resources */,
 				A5FB30462555AD41009E1018 /* Assets.xcassets in Resources */,
@@ -324,7 +368,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT884K7983;
-				INFOPLIST_FILE = JunctionApp/Info.plist;
+				INFOPLIST_FILE = JunctionApp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,7 +388,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT884K7983;
-				INFOPLIST_FILE = JunctionApp/Info.plist;
+				INFOPLIST_FILE = JunctionApp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
