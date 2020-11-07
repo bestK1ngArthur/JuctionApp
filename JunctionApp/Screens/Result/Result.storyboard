@@ -2,7 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ecm-TO-ZEe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,29 +17,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LRy-b9-4Wi">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LRy-b9-4Wi">
+                                <rect key="frame" x="0.0" y="85" width="414" height="811"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultTableViewCell" rowHeight="449" id="dc1-xG-9st">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="449"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultTableViewCell" id="dc1-xG-9st" customClass="ResultTableViewCell" customModule="JunctionApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dc1-xG-9st" id="cjI-DK-GZ4">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="449"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7D-Og-alc" customClass="CardView" customModule="JunctionApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="449"/>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7D-Og-alc" customClass="CardView" customModule="JunctionApp" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="8" width="382" height="0.0"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="24"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="Q7D-Og-alc" firstAttribute="leading" secondItem="cjI-DK-GZ4" secondAttribute="leading" id="BwJ-bA-St5"/>
-                                                <constraint firstItem="Q7D-Og-alc" firstAttribute="top" secondItem="cjI-DK-GZ4" secondAttribute="top" id="XKE-Mq-TKn"/>
-                                                <constraint firstAttribute="trailing" secondItem="Q7D-Og-alc" secondAttribute="trailing" id="Yso-YM-1rs"/>
-                                                <constraint firstAttribute="bottom" secondItem="Q7D-Og-alc" secondAttribute="bottom" id="wYV-wo-eAc"/>
+                                                <constraint firstItem="Q7D-Og-alc" firstAttribute="leading" secondItem="cjI-DK-GZ4" secondAttribute="leading" constant="16" id="BwJ-bA-St5"/>
+                                                <constraint firstItem="Q7D-Og-alc" firstAttribute="top" secondItem="cjI-DK-GZ4" secondAttribute="top" constant="8" id="XKE-Mq-TKn"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q7D-Og-alc" secondAttribute="trailing" constant="16" id="Yso-YM-1rs"/>
+                                                <constraint firstAttribute="bottom" secondItem="Q7D-Og-alc" secondAttribute="bottom" constant="8" id="wYV-wo-eAc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="cardView" destination="Q7D-Og-alc" id="T3g-4f-sUI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -46,16 +57,28 @@
                                     <outlet property="delegate" destination="Ecm-TO-ZEe" id="MKV-Aw-AAP"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best recommended" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9K-dI-ba6">
+                                <rect key="frame" x="16" y="44" width="382" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8k0-jO-VZN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Orange"/>
                         <constraints>
+                            <constraint firstItem="J9K-dI-ba6" firstAttribute="leading" secondItem="8k0-jO-VZN" secondAttribute="leading" constant="16" id="3UR-YJ-N48"/>
                             <constraint firstItem="8k0-jO-VZN" firstAttribute="trailing" secondItem="LRy-b9-4Wi" secondAttribute="trailing" id="3kK-Ma-bzl"/>
-                            <constraint firstItem="LRy-b9-4Wi" firstAttribute="top" secondItem="8k0-jO-VZN" secondAttribute="top" id="Xog-6e-sPq"/>
+                            <constraint firstItem="LRy-b9-4Wi" firstAttribute="top" secondItem="J9K-dI-ba6" secondAttribute="bottom" id="LQb-8b-S3c"/>
+                            <constraint firstItem="8k0-jO-VZN" firstAttribute="top" secondItem="J9K-dI-ba6" secondAttribute="top" id="Pnu-K9-5zw"/>
                             <constraint firstItem="LRy-b9-4Wi" firstAttribute="leading" secondItem="8k0-jO-VZN" secondAttribute="leading" id="au8-65-Q5R"/>
-                            <constraint firstItem="8k0-jO-VZN" firstAttribute="bottom" secondItem="LRy-b9-4Wi" secondAttribute="bottom" id="qza-Ie-iU8"/>
+                            <constraint firstItem="8k0-jO-VZN" firstAttribute="trailing" secondItem="J9K-dI-ba6" secondAttribute="trailing" constant="16" id="djA-nS-UXd"/>
+                            <constraint firstAttribute="bottom" secondItem="LRy-b9-4Wi" secondAttribute="bottom" id="qza-Ie-iU8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="LRy-b9-4Wi" id="Gzz-65-inf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ed3-s6-ZMp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,6 +86,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="Orange">
+            <color red="0.94700002670288086" green="0.62599998712539673" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
