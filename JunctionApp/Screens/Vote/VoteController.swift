@@ -17,17 +17,25 @@ class VoteController: UIViewController {
     
     override func viewDidLoad() {
         Server.current.getFirstPlaces { [weak self] (places) in
-            self?.localPlaces = places
-            self?.firstCard?.configurateCard(place: places.first)
-            self?.secondCard?.configurateCard(place: places.last)
+            if places.isEmpty {
+                self?.dismiss(animated: true, completion: nil)
+            } else {
+                self?.localPlaces = places
+                self?.firstCard?.configurateCard(place: places.first)
+                self?.secondCard?.configurateCard(place: places.last)
+            }
         }
     }
     
     @IBAction func chooseFirst() {
         firstCard?.startAnimation()
         Server.current.choosePlace(1) { [weak self] (places) in
-            self?.localPlaces = places
-            self?.firstCard?.configurateCard(place: places.first)
+            if places.isEmpty {
+                self?.dismiss(animated: true, completion: nil)
+            } else {
+                self?.localPlaces = places
+                self?.firstCard?.configurateCard(place: places.first)
+            }
         }
     }
     
@@ -35,8 +43,12 @@ class VoteController: UIViewController {
         print("presed")
         secondCard?.startAnimation()
         Server.current.choosePlace(1) { [weak self] (places) in
-            self?.localPlaces = places
-            self?.secondCard?.configurateCard(place: places.last)
+            if places.isEmpty {
+                self?.dismiss(animated: true, completion: nil)
+            } else {
+                self?.localPlaces = places
+                self?.secondCard?.configurateCard(place: places.last)
+            }
         }
     }
     
