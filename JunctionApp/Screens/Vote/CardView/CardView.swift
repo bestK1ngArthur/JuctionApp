@@ -82,15 +82,14 @@ extension CardView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let places = places else { return CGSize(width: 100, height: 40) }
         let text = places[indexPath.row]
-        let width = UILabel.textWidth(font: UIFont.systemFont(ofSize: 14), text: text)
+        let width = UILabel.textWidth(font: UIFont.boldSystemFont(ofSize: 14), text: text)
         return CGSize(width: width + 32, height: 40)
     }
 }
 
 extension CardView: SkeletonCollectionViewDelegate, SkeletonCollectionViewDataSource {
+    
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return "MyCollectionCell"
     }
-    
-    
 }

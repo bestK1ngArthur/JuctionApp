@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,7 +10,7 @@
             <connections>
                 <outlet property="collectionView" destination="H3S-Vs-8Wr" id="7Yl-kR-htR"/>
                 <outlet property="placeImage" destination="KFO-4m-pCR" id="6gr-L9-kPp"/>
-                <outlet property="placeOpened" destination="346-DB-Mma" id="zwZ-2U-B3K"/>
+                <outlet property="placeOpened" destination="h4l-5u-lC3" id="Xwx-rx-Y0F"/>
                 <outlet property="placeTitle" destination="MoI-1e-JRb" id="ra5-H1-34e"/>
             </connections>
         </placeholder>
@@ -21,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" image="restic" translatesAutoresizingMaskIntoConstraints="NO" id="KFO-4m-pCR">
-                    <rect key="frame" x="16" y="16" width="382" height="464"/>
+                    <rect key="frame" x="16" y="16" width="382" height="468.5"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="10"/>
@@ -32,8 +31,8 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Макдональдс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoI-1e-JRb">
-                    <rect key="frame" x="16" y="496" width="382" height="29"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoI-1e-JRb">
+                    <rect key="frame" x="16" y="500.5" width="382" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -47,8 +46,23 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4l-5u-lC3">
+                    <rect key="frame" x="16" y="531.5" width="382" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="H3S-Vs-8Wr">
-                    <rect key="frame" x="0.0" y="533" width="414" height="40"/>
+                    <rect key="frame" x="0.0" y="565" width="414" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="6Mg-TI-Zfi"/>
@@ -70,37 +84,22 @@
                         <outlet property="delegate" destination="-1" id="lzp-qo-c7v"/>
                     </connections>
                 </collectionView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="346-DB-Mma">
-                    <rect key="frame" x="16" y="581" width="382" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
-                            <real key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </label>
             </subviews>
-            <color key="backgroundColor" name="LightViolet"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="346-DB-Mma" secondAttribute="bottom" constant="16" id="3XU-D8-C29"/>
                 <constraint firstAttribute="trailing" secondItem="H3S-Vs-8Wr" secondAttribute="trailing" id="3eg-9J-jlb"/>
                 <constraint firstItem="H3S-Vs-8Wr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AXs-Ms-hhr"/>
-                <constraint firstItem="346-DB-Mma" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Fef-N0-9W1"/>
+                <constraint firstAttribute="bottom" secondItem="H3S-Vs-8Wr" secondAttribute="bottom" constant="16" id="Dfv-km-z8i"/>
                 <constraint firstAttribute="trailing" secondItem="KFO-4m-pCR" secondAttribute="trailing" constant="16" id="G8i-IR-Tg6"/>
+                <constraint firstItem="H3S-Vs-8Wr" firstAttribute="top" secondItem="h4l-5u-lC3" secondAttribute="bottom" constant="12" id="Ger-7i-VkS"/>
                 <constraint firstItem="KFO-4m-pCR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="HCR-AT-bUE"/>
                 <constraint firstAttribute="trailing" secondItem="MoI-1e-JRb" secondAttribute="trailing" constant="16" id="Kje-Tv-j5l"/>
-                <constraint firstAttribute="trailing" secondItem="346-DB-Mma" secondAttribute="trailing" constant="16" id="e00-d9-JgZ"/>
-                <constraint firstItem="H3S-Vs-8Wr" firstAttribute="top" secondItem="MoI-1e-JRb" secondAttribute="bottom" constant="8" id="ffc-AT-PVd"/>
+                <constraint firstAttribute="trailing" secondItem="h4l-5u-lC3" secondAttribute="trailing" constant="16" id="PI5-cU-zoB"/>
                 <constraint firstItem="KFO-4m-pCR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="hGB-DR-s0i"/>
-                <constraint firstItem="346-DB-Mma" firstAttribute="top" secondItem="H3S-Vs-8Wr" secondAttribute="bottom" constant="8" id="qWd-rL-lt8"/>
+                <constraint firstItem="h4l-5u-lC3" firstAttribute="top" secondItem="MoI-1e-JRb" secondAttribute="bottom" constant="2" id="iRj-W4-gas"/>
                 <constraint firstItem="MoI-1e-JRb" firstAttribute="top" secondItem="KFO-4m-pCR" secondAttribute="bottom" constant="16" id="sHV-ap-hYe"/>
                 <constraint firstItem="MoI-1e-JRb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="vFe-oN-G4H"/>
+                <constraint firstItem="h4l-5u-lC3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="vjh-DY-5P8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="40.579710144927539" y="254.12946428571428"/>
@@ -108,8 +107,5 @@
     </objects>
     <resources>
         <image name="restic" width="1000" height="750"/>
-        <namedColor name="LightViolet">
-            <color red="0.82400000095367432" green="0.77999997138977051" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
     </resources>
 </document>

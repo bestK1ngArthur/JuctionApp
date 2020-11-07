@@ -51,7 +51,6 @@ class RoomController: UIViewController {
     
     private var state: State = .notCreated {
         didSet {
-            guard state != oldValue else { return }
             updateButtons()
         }
     }
@@ -74,7 +73,7 @@ class RoomController: UIViewController {
         
         voteButton.animateHidden(!state.isVoteVisible)
         voteButton.isEnabled = state.isVoteEnabled
-        voteButton.backgroundColor = state.isVoteEnabled ? #colorLiteral(red: 0.5960784314, green: 0.2588235294, blue: 0.3764705882, alpha: 1) : .lightGray
+        voteButton.backgroundColor = state.isVoteEnabled ? #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1) : .lightGray
         voteButton.setTitle(state.voteTitle, for: .normal)
 
         UIView.animate(withDuration: 0.3) { [unowned self] in

@@ -15,13 +15,13 @@ class Server {
     static let current = Server()
     
     func createRoom(for user: User, completion: @escaping RoomCompletion) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             completion(Room(id: 101))
         }
     }
         
     func getRoomStatus(for roomID: RoomID, completion: @escaping RoomStatusCompletion) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             completion(RoomStatus(voters: [
                 .init(name: "Ivan", status: .voting),
                 .init(name: "Katya", status: .finished)

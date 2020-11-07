@@ -13,6 +13,7 @@
 		84F4F0DC25568B31008E97FC /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F4F0DB25568B31008E97FC /* CardView.xib */; };
 		84F4F0E025569B8D008E97FC /* MyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4F0DE25569B8D008E97FC /* MyCollectionCell.swift */; };
 		84F4F0E125569B8D008E97FC /* MyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F4F0DF25569B8D008E97FC /* MyCollectionCell.xib */; };
+		A5207624255712ED00A75DEC /* UIButton+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5207623255712ED00A75DEC /* UIButton+Utils.swift */; };
 		A56FB3642556FE00007C0EC7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FB3632556FE00007C0EC7 /* Models.swift */; };
 		A5B9DFDF2556BE0B00E91051 /* RoomVooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9DFDE2556BE0B00E91051 /* RoomVooterCell.swift */; };
 		A5FB303D2555AD3E009E1018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB303C2555AD3E009E1018 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		84F4F0DB25568B31008E97FC /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		84F4F0DE25569B8D008E97FC /* MyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionCell.swift; sourceTree = "<group>"; };
 		84F4F0DF25569B8D008E97FC /* MyCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionCell.xib; sourceTree = "<group>"; };
+		A5207623255712ED00A75DEC /* UIButton+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Utils.swift"; sourceTree = "<group>"; };
 		A56FB3632556FE00007C0EC7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A5B9DFDE2556BE0B00E91051 /* RoomVooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomVooterCell.swift; sourceTree = "<group>"; };
 		A5FB30392555AD3E009E1018 /* JunctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JunctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,9 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				84F4F0D825568B24008E97FC /* CardView.swift */,
+				84F4F0DB25568B31008E97FC /* CardView.xib */,
 				84F4F0DE25569B8D008E97FC /* MyCollectionCell.swift */,
 				84F4F0DF25569B8D008E97FC /* MyCollectionCell.xib */,
-				84F4F0DB25568B31008E97FC /* CardView.xib */,
 			);
 			path = CardView;
 			sourceTree = "<group>";
@@ -146,8 +148,8 @@
 		A5FB305D2555E87D009E1018 /* Vote */ = {
 			isa = PBXGroup;
 			children = (
-				A5FB30522555E813009E1018 /* VoteController.swift */,
 				84F4F0E72556A388008E97FC /* CardView */,
+				A5FB30522555E813009E1018 /* VoteController.swift */,
 				A5FB305A2555E876009E1018 /* Vote.storyboard */,
 			);
 			path = Vote;
@@ -207,6 +209,7 @@
 				A5FB3075255678A8009E1018 /* UIView+Utils.swift */,
 				84F4F0CF25568570008E97FC /* UIImageView+Utils.swift */,
 				845EECC42556B9D200045425 /* UILabel+Utils.swift */,
+				A5207623255712ED00A75DEC /* UIButton+Utils.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				A5FB3076255678A8009E1018 /* UIView+Utils.swift in Sources */,
 				A5FB30822556923E009E1018 /* NamePopupController.swift in Sources */,
 				A5B9DFDF2556BE0B00E91051 /* RoomVooterCell.swift in Sources */,
+				A5207624255712ED00A75DEC /* UIButton+Utils.swift in Sources */,
 				84F4F0E025569B8D008E97FC /* MyCollectionCell.swift in Sources */,
 				84F4F0D925568B24008E97FC /* CardView.swift in Sources */,
 				A5FB30532555E813009E1018 /* VoteController.swift in Sources */,
