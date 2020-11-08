@@ -38,8 +38,18 @@ class VoteController: UIViewController {
             if places.isEmpty {
                 self?.finish()
             } else {
+                let oldPlace = self?.localPlaces?.first
                 self?.localPlaces = places
-                self?.secondCard?.configurateCard(place: places.first)
+                
+                var place: Place? {
+                    if oldPlace?.name != places.first?.name {
+                        return places.first
+                    } else {
+                        return places.last
+                    }
+                }
+            
+                self?.secondCard?.configurateCard(place: place)
             }
         }
     }
@@ -51,13 +61,27 @@ class VoteController: UIViewController {
             if places.isEmpty {
                 self?.finish()
             } else {
+                let oldPlace = self?.localPlaces?.last
                 self?.localPlaces = places
-                self?.firstCard?.configurateCard(place: places.last)
+                
+                var place: Place? {
+                    if oldPlace?.name != places.last?.name {
+                        return places.last
+                    } else {
+                        return places.first
+                    }
+                }
+                
+                self?.firstCard?.configurateCard(place: place)
             }
         }
     }
     
     private func finish() {
+        if let roomController = presentingViewController as? RoomController {
+            roomController.showWaiting()
+        }
+        
         dismiss(animated: true, completion: nil)
     }
 }
