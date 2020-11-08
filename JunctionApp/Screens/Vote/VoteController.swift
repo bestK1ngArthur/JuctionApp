@@ -17,7 +17,6 @@ class VoteController: UIViewController {
     @IBOutlet weak var secondButton: UIButton!
     
     var localPlaces: [Place]?
-    var chooseCount = 0
     var roomID: RoomID { Storage.current.roomID! }
     
     override func viewDidLoad() {
@@ -33,12 +32,11 @@ class VoteController: UIViewController {
     }
     
     @IBAction func chooseFirst() {
-        checkCount()
         
         secondCard?.startAnimation()
         Server.current.choosePlace(isFirstPlace: true, for: roomID) { [weak self] places in
             if places.isEmpty {
-                self?.dismiss(animated: true, completion: nil)
+                self?.finish()
             } else {
                 self?.localPlaces = places
                 self?.secondCard?.configurateCard(place: places.first)
@@ -47,12 +45,11 @@ class VoteController: UIViewController {
     }
     
     @IBAction func chooseSecond() {
-        checkCount()
         
         firstCard?.startAnimation()
         Server.current.choosePlace(isFirstPlace: false, for: roomID) { [weak self] places in
             if places.isEmpty {
-                self?.dismiss(animated: true, completion: nil)
+                self?.finish()
             } else {
                 self?.localPlaces = places
                 self?.firstCard?.configurateCard(place: places.last)
@@ -60,11 +57,7 @@ class VoteController: UIViewController {
         }
     }
     
-    private func checkCount() {
-        if chooseCount == 6 {
-            dismiss(animated: true, completion: nil)
-        }
-        
-        chooseCount += 1
+    private func finish() {
+        dismiss(animated: true, completion: nil)
     }
 }

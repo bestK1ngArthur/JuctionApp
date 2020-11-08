@@ -111,6 +111,15 @@ class RoomController: UIViewController {
         Server.current.getRoom(for: roomID) { [unowned self] room in
             self.voters = room.voters
             self.results = []
+            
+            var isReady = true
+            room.voters.forEach { voter in
+                isReady = isReady && voter.isReady
+            }
+            
+            if isReady {
+                state = .result
+            }
         }
     }
     
