@@ -119,7 +119,7 @@ class Server {
     }
     
     func getRecommendedPlaces(for roomID: RoomID, completion: @escaping PlacesCompletion) {
-        let url = baseURL.appendingPathComponent("room/\(roomID)/business")
+        let url = URL(string: "http://84.201.163.58:33319/api/v2")!.appendingPathComponent("room/\(roomID)/business")
         
         request(.get, modelType: PlacesResponse.self, url: url) { response in
             guard case let .success(data) = response else { return }
