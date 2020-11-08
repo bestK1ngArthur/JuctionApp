@@ -17,7 +17,6 @@ class VoteController: UIViewController {
     @IBOutlet weak var secondButton: UIButton!
     
     var localPlaces: [Place]?
-    var chooseCount = 0
     var roomID: RoomID { Storage.current.roomID! }
     
     override func viewDidLoad() {
@@ -33,38 +32,56 @@ class VoteController: UIViewController {
     }
     
     @IBAction func chooseFirst() {
-        checkCount()
         
         secondCard?.startAnimation()
         Server.current.choosePlace(isFirstPlace: true, for: roomID) { [weak self] places in
             if places.isEmpty {
-                self?.dismiss(animated: true, completion: nil)
+                self?.finish()
             } else {
+                let oldPlace = self?.localPlaces?.first
                 self?.localPlaces = places
-                self?.secondCard?.configurateCard(place: places.first)
+                
+                var place: Place? {
+                    if oldPlace?.name != places.first?.name {
+                        return places.first
+                    } else {
+                        return places.last
+                    }
+                }
+            
+                self?.secondCard?.configurateCard(place: place)
             }
         }
     }
     
     @IBAction func chooseSecond() {
-        checkCount()
         
         firstCard?.startAnimation()
         Server.current.choosePlace(isFirstPlace: false, for: roomID) { [weak self] places in
             if places.isEmpty {
-                self?.dismiss(animated: true, completion: nil)
+                self?.finish()
             } else {
+                let oldPlace = self?.localPlaces?.last
                 self?.localPlaces = places
-                self?.firstCard?.configurateCard(place: places.last)
+                
+                var place: Place? {
+                    if oldPlace?.name != places.last?.name {
+                        return places.last
+                    } else {
+                        return places.first
+                    }
+                }
+                
+                self?.firstCard?.configurateCard(place: place)
             }
         }
     }
     
-    private func checkCount() {
-        if chooseCount == 6 {
-            dismiss(animated: true, completion: nil)
+    private func finish() {
+        if let roomController = presentingViewController as? RoomController {
+            roomController.showWaiting()
         }
         
-        chooseCount += 1
+        dismiss(animated: true, completion: nil)
     }
 }

@@ -66,10 +66,26 @@ class Server {
         let url = baseURL.appendingPathComponent("room/\(roomID)/choice")
         
         request(.get, modelType: PlacesPairResponse.self, url: url) { response in
+            if case .failure = response {
+                DispatchQueue.main.async {
+                    completion([])
+                }
+            }
+            
             guard case let .success(pair) = response else { return }
 
+            var places: [Place] = []
+            
+            if let first = pair.first {
+                places.append(first)
+            }
+            
+            if let last = pair.second {
+                places.append(last)
+            }
+            
             DispatchQueue.main.async {
-                completion([pair.first, pair.second])
+                completion(places)
             }
         }
     }
@@ -78,10 +94,38 @@ class Server {
         let url = baseURL.appendingPathComponent("room/\(roomID)/choice")
         
         request(.put, modelType: PlacesPairResponse.self, url: url, body: ["first_business_chosen": "\(isFirstPlace)"]) { response in
+            if case .failure = response {
+                DispatchQueue.main.async {
+                    completion([])
+                }
+            }
+            
             guard case let .success(pair) = response else { return }
 
+            var places: [Place] = []
+            
+            if let first = pair.first {
+                places.append(first)
+            }
+            
+            if let last = pair.second {
+                places.append(last)
+            }
+            
             DispatchQueue.main.async {
-                completion([pair.first, pair.second])
+                completion(places)
+            }
+        }
+    }
+    
+    func getRecommendedPlaces(for roomID: RoomID, completion: @escaping PlacesCompletion) {
+        let url = baseURL.appendingPathComponent("room/\(roomID)/business")
+        
+        request(.get, modelType: PlacesResponse.self, url: url) { response in
+            guard case let .success(data) = response else { return }
+            
+            DispatchQueue.main.async {
+                completion(data.results)
             }
         }
     }
@@ -144,6 +188,7 @@ class Server {
                 let model = try self.decoder.decode(Model.self, from: data)
                 completion(.success(model))
             } catch let error {
+                completion(.failure(error))
                 print(error.localizedDescription)
             }
         }
@@ -175,7 +220,8 @@ class Server {
                 let model = try self.decoder.decode(Model.self, from: data)
                 completion(.success(model))
             } catch let error {
-                fatalError(error.localizedDescription)
+                completion(.failure(error))
+                print(error.localizedDescription)
             }
         }
         
@@ -206,7 +252,8 @@ class Server {
                 let model = try self.decoder.decode(Model.self, from: data)
                 completion(.success(model))
             } catch let error {
-                fatalError(error.localizedDescription)
+                completion(.failure(error))
+                print(error.localizedDescription)
             }
         }
         
@@ -236,8 +283,8 @@ extension Server {
     }
     
     struct PlacesPairResponse: Decodable {
-        let first: Place
-        let second: Place
+        let first: Place?
+        let second: Place?
         
         enum CodingKeys: String, CodingKey {
             case first = "first_business"

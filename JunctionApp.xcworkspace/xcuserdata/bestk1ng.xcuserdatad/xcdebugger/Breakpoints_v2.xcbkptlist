@@ -30,42 +30,10 @@
             filePath = "JunctionApp/Services/Server.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "post(url:body:modelType:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "31D20610-CDA7-405C-B6CE-3E567E2D2F5D - 994c4b81b72b7731"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JunctionApp.Server.(post in _FE0A0FD19641931194D5621597631E07)&lt;A where A: Swift.Decodable&gt;(url: Foundation.URL, body: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, modelType: A.Type, completion: (JunctionApp.Server.Result&lt;A&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "JunctionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bestk1ng/Developer/Hackathons/JunctionApp/JunctionApp/Services/Server.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "1340">
-               </Location>
-               <Location
-                  uuid = "31D20610-CDA7-405C-B6CE-3E567E2D2F5D - 58792d24e1ac863f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in JunctionApp.Server.(post in _FE0A0FD19641931194D5621597631E07)&lt;A where A: Swift.Decodable&gt;(url: Foundation.URL, body: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, modelType: A.Type, completion: (JunctionApp.Server.Result&lt;A&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "JunctionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bestk1ng/Developer/Hackathons/JunctionApp/JunctionApp/Services/Server.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "363">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,8 +62,8 @@
             filePath = "JunctionApp/Services/Models.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,42 +78,10 @@
             filePath = "JunctionApp/Services/Server.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "get(url:modelType:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6F09708D-BA96-4E81-8F07-403786F49646 - 472b13f52a0bd56a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JunctionApp.Server.(get in _FE0A0FD19641931194D5621597631E07)&lt;A where A: Swift.Decodable&gt;(url: Foundation.URL, modelType: A.Type, completion: (JunctionApp.Server.Result&lt;A&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "JunctionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bestk1ng/Developer/Hackathons/JunctionApp/JunctionApp/Services/Server.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
-                  offsetFromSymbolStart = "812">
-               </Location>
-               <Location
-                  uuid = "6F09708D-BA96-4E81-8F07-403786F49646 - 36047acd499d46d5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in JunctionApp.Server.(get in _FE0A0FD19641931194D5621597631E07)&lt;A where A: Swift.Decodable&gt;(url: Foundation.URL, modelType: A.Type, completion: (JunctionApp.Server.Result&lt;A&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "JunctionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bestk1ng/Developer/Hackathons/JunctionApp/JunctionApp/Services/Server.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "127"
-                  endingLineNumber = "127"
-                  offsetFromSymbolStart = "524">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -184,14 +120,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F4E58A90-4C2E-492F-99A0-8312BAD618B3"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JunctionApp/Services/Server.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "getFirstPlaces(for:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,9 +142,201 @@
             filePath = "JunctionApp/Screens/Vote/VoteController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0403BDE9-D30A-42B1-BC0F-0D61439526A0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Server.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "choosePlace(isFirstPlace:for:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0403BDE9-D30A-42B1-BC0F-0D61439526A0 - e71b55aef09c57c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JunctionApp.Server.choosePlace(isFirstPlace: Swift.Bool, for: Swift.String, completion: (Swift.Array&lt;JunctionApp.Place&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "JunctionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bestk1ng/Developer/Hackathons/JunctionApp/JunctionApp/Services/Server.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "864">
+               </Location>
+               <Location
+                  uuid = "0403BDE9-D30A-42B1-BC0F-0D61439526A0 - c0adaa58c0ab2f68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (JunctionApp.Server.Result&lt;JunctionApp.Server.PlacesPairResponse&gt;) -&gt; () in JunctionApp.Server.choosePlace(isFirstPlace: Swift.Bool, for: Swift.String, completion: (Swift.Array&lt;JunctionApp.Place&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "JunctionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bestk1ng/Developer/Hackathons/JunctionApp/JunctionApp/Services/Server.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "284">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24577F8E-3BF2-4BEA-8841-FB7AD42B3B05"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Server.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "choosePlace(isFirstPlace:for:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ADB35377-6517-4E9C-90D1-1CADC6FA452A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Server.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "getFirstPlaces(for:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ADB35377-6517-4E9C-90D1-1CADC6FA452A - a18db416b5f38444"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JunctionApp.Server.getFirstPlaces(for: Swift.String, completion: (Swift.Array&lt;JunctionApp.Place&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "JunctionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bestk1ng/Developer/Hackathons/JunctionApp/JunctionApp/Services/Server.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "744">
+               </Location>
+               <Location
+                  uuid = "ADB35377-6517-4E9C-90D1-1CADC6FA452A - 58b54162515b1cd9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (JunctionApp.Server.Result&lt;JunctionApp.Server.PlacesPairResponse&gt;) -&gt; () in JunctionApp.Server.getFirstPlaces(for: Swift.String, completion: (Swift.Array&lt;JunctionApp.Place&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "JunctionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bestk1ng/Developer/Hackathons/JunctionApp/JunctionApp/Services/Server.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "284">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4B3CC2D-6F7F-4D36-B3FC-CCF8E63E6701"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Server.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "put(url:body:modelType:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12552A18-AFFF-43D3-92C8-618F350853A1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Server.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "get(url:modelType:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A17DBBE1-F256-48C2-9FD5-F7114D84C127"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Server.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "post(url:body:modelType:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E08E86D-A67E-408E-8450-4313DC5B049E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Server.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "get(url:modelType:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "270EAC42-3C85-40DB-8683-65A198AFB519"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JunctionApp/Services/Server.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "post(url:body:modelType:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

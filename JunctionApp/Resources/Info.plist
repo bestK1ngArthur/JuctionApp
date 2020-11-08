@@ -33,6 +33,15 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need location to suggest places in your city</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need location to suggest places in your city</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -65,8 +74,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -75,14 +82,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need location to suggest places in your city</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need location to suggest places in your city</string>
 </dict>
 </plist>

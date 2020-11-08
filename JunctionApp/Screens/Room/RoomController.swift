@@ -42,6 +42,10 @@ class RoomController: UIViewController {
         nameLabel.text = "Hi, \(name)"
     }
     
+    func showWaiting() {
+        state = .waiting
+    }
+    
     func checkStartupState() {
         if let roomID = Storage.current.roomID {
             room = Room(id: roomID, voters: [])
@@ -111,6 +115,15 @@ class RoomController: UIViewController {
         Server.current.getRoom(for: roomID) { [unowned self] room in
             self.voters = room.voters
             self.results = []
+            
+            var isReady = true
+            room.voters.forEach { voter in
+                isReady = isReady && voter.isReady
+            }
+            
+            if isReady {
+                state = .result
+            }
         }
     }
     
@@ -213,7 +226,7 @@ extension RoomController {
         
         var voteTitle: String {
             switch self {
-            case .notCreated, .created: return "Start choosing"
+            case .notCreated, .created: return "Start vote"
             case .waiting, .result: return "Show suggestions"
             }
         }

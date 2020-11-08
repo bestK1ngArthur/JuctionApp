@@ -32,9 +32,10 @@ class CardView: UIView {
     }
     
     func configurateCard(place: Place?) {
+        placeImage?.image = nil
         guard let place = place else { return }
         placeTitle?.text = place.name
-        placeImage?.loadFromURL(photoUrl: place.photo,complition: {
+        placeImage?.loadFromURL(photoUrl: place.photo, complition: {
             self.stopAnimation()
         })
         if place.isOpen {

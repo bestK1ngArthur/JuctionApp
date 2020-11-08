@@ -13,8 +13,25 @@ class ResultController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var roomID: RoomID { Storage.current.roomID! }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Server.current.getRecommendedPlaces(for: roomID) { [weak self] places in
+            var newPlaces: [Place] = []
+            
+            places.forEach { place in
+                if newPlaces.contains(where: { $0.name == place.name }) {
+                    return
+                }
+                
+                newPlaces.append(place)
+            }
+            
+            self?.places = newPlaces
+            self?.tableView.reloadData()
+        }
     }
 }
 

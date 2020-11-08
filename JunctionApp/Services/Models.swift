@@ -39,7 +39,9 @@ typealias PlaceID = Int
 
 struct Voter: Codable, Equatable {
     let name: String
-    let status: Status
+    let isReady: Bool
+    
+    var status: Status { isReady ? .finished : .voting }
     
     var initials: String {
         guard let firstLetter = name.first else { return "" }
@@ -53,7 +55,7 @@ struct Voter: Codable, Equatable {
     
     enum CodingKeys: String, CodingKey {
         case name = "username"
-        case status
+        case isReady = "ready"
     }
 }
 
@@ -74,7 +76,6 @@ struct Place: Codable, Equatable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         let photos = try container.decode([[String: String]].self, forKey: .photo)
-        
         if let photoID = photos.first?["photo_id"] {
             photo = "http://84.201.163.58:33319/photos/\(photoID).jpg"
         } else {
@@ -82,13 +83,7 @@ struct Place: Codable, Equatable {
         }
         
         name = try container.decode(String.self, forKey: .name)
-        cuisines = ["european", "mexican"] //try container.decode([String].self, forKey: .cuisines)
-        isOpen = try container.decode(
-            Bool.self, forKey: .isOpen)
+        cuisines = try container.decode([String].self, forKey: .cuisines)
+        isOpen = try container.decode(Bool.self, forKey: .isOpen)
     }
-}
-
-struct RoomStatus: Codable, Equatable {
-    let voters: [Voter]
-    let places: [Place]
 }
